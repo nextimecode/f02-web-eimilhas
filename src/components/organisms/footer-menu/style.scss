@@ -1,0 +1,12 @@
+@import '../../../styles/custom/variables.scss';
+
+.footer-menu {
+    background-color: $blue;
+    color: $white;
+    font-family: $font-01;
+}
+
+.qrcode {
+    width: 120px;
+    border-radius: 20px;
+}

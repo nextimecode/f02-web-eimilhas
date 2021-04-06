@@ -1,19 +1,37 @@
 import React from 'react'
-import Head from 'next/head'
+import Bemvindo from '../components/organisms/bemvindo'
+import Depoimentos from '../components/organisms/depoimentos'
+import Encontre from '../components/organisms/encontre'
+import Numeros from '../components/organisms/numeros'
+import Promocoes from '../components/organisms/promocoes'
+import PageTemplate from '../components/templates/pageTemplate'
+import Section from '../components/templates/section'
 
 const Index: React.FC = () => {
   return (
-    <>
-      <Head>
-        <title>Homepage</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reactstrap/4.8.0/reactstrap.min.js"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com"/>
-        <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet"/>
-      </Head>
-      <div>
-        <h1>Hello</h1>
-      </div>
-    </>
+    <PageTemplate title="Home">
+
+      <Section id="home">
+        <Encontre/>
+      </Section>
+
+      <Section id="pagamento">
+        <Bemvindo/>
+      </Section>
+
+      <Section id="promocoes">
+        <Promocoes/>
+      </Section>
+
+      <Section id="depoimentos">
+        <Depoimentos/>
+      </Section>
+
+      <Section id="numeros">
+        <Numeros/>
+      </Section>
+
+    </PageTemplate>
   )
 }
 

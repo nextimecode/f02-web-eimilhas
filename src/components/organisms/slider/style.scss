@@ -1,0 +1,16 @@
+@import '../../../styles/custom/variables.scss';
+
+.react-multiple-carousel__arrow--left::before {
+    content: '<' !important;
+    font-weight: 900;
+}
+.react-multiple-carousel__arrow--right::before {
+    content: '>' !important;
+    font-weight: 900;
+}
+.react-multiple-carousel__arrow {
+    border-color: $red;
+    border-width: 5px;
+    border-style: inset;
+    bottom: 84px;
+}

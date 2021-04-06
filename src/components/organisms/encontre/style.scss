@@ -1,0 +1,21 @@
+@import '../../../styles/global.scss';
+
+.form-encontre {
+    background-color: $orange;
+}
+
+.form-label {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+input[type="number"] {
+    max-width: 80px;
+}
+
+.bg-encontre {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 120px;
+}
