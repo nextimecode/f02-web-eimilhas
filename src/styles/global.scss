@@ -32,4 +32,21 @@ h1, h2 {
     background-color: $red;
 }
 
+button[type="button"] {
+    font-family: $font-01;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+a:link {
+    text-decoration: none;
+    color: inherit;
+    transition: .3s;
+}
+
+a:hover {
+    transition: .3s;
+    color: $orange;
+}
+
 @import '~bootstrap/scss/bootstrap';

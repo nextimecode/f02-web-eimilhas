@@ -1,2 +1,40 @@
 @import '../../../styles/custom/variables.scss';
 
+.card-promocao {
+    background-color: $black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.6);
+    opacity: 1;
+    transition: .3s ease;
+    padding: 1rem 0;
+}
+
+.card-middle {
+    transition: .3s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
+}
+
+.card-promocao:hover{
+    box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.8);
+}
+
+.card-promocao:hover .card-middle {
+    opacity: 1;
+}
+
+.card-promocao:hover .card-preco {
+    opacity: 0;
+}
+
+.btn-reservar {
+    padding: 1rem 1.5rem !important;
+    background-color: $orange !important;
+    color: $primary !important;
+}

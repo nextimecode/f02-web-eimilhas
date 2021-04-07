@@ -7,6 +7,8 @@ import Promocoes from '../components/organisms/promocoes'
 import PageTemplate from '../components/templates/pageTemplate'
 import Section from '../components/templates/section'
 
+export const instagramUrl = 'https://www.instagram.com/eimilhas/'
+
 const Index: React.FC = () => {
   return (
     <PageTemplate title="Home">

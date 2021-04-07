@@ -13,7 +13,8 @@ const promocoes = [
       bandeira: `${pathBandeiras}/user.png`,
       pais: 'Brasil',
       artigo: 'o',
-      preco: 200
+      preco: 200,
+      trecho: 'ida e volta'
     }
   },
   {
@@ -22,7 +23,8 @@ const promocoes = [
       bandeira: `${pathBandeiras}/user.png`,
       pais: 'EUA',
       artigo: 'os',
-      preco: 1500
+      preco: 1500,
+      trecho: 'ida e volta'
     }
   },
   {
@@ -31,7 +33,8 @@ const promocoes = [
       bandeira: `${pathBandeiras}/user.png`,
       pais: 'Inglaterra',
       artigo: 'a',
-      preco: 3000
+      preco: 3000,
+      trecho: 'ida e volta'
     }
   },
   {
@@ -40,7 +43,8 @@ const promocoes = [
       bandeira: `${pathBandeiras}/user.png`,
       pais: 'Itália',
       artigo: 'a',
-      preco: 2000
+      preco: 2000,
+      trecho: 'ida e volta'
     }
   },
   {
@@ -49,7 +53,8 @@ const promocoes = [
       bandeira: `${pathBandeiras}/user.png`,
       pais: 'Austrália',
       artigo: 'a',
-      preco: 5000
+      preco: 5000,
+      trecho: 'ida e volta'
     }
   }
 ]

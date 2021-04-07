@@ -8,6 +8,6 @@ type Props = {
 const Preco = ({
   value,
   color = 'red'
-}: Props) => <span className={`text-${color} fw-bold`}>R$ {value},00</span>
+}: Props) => <h2 className={`text-${color} fw-bold my-0`}>R$ {value},00</h2>
 
 export default Preco

@@ -9,12 +9,12 @@ const FooterOwners = () => {
       <div className="row">
 
         <div className="col-6 text-center py-2">
-                    Copyright © {new Date().getFullYear()} | EiMilhas
+          Copyright © {new Date().getFullYear()} | EiMilhas
         </div>
         <div className="col-6 text-center py-2">
-                    Developed by&nbsp;
+          Developed by&nbsp;
           <a href="https://nextime.com.br">
-                        NeXTIME
+            NeXTIME
           </a>
         </div>
       </div>

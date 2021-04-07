@@ -20,7 +20,7 @@ export interface CardProps {
     title: string
     imageIcon: string
     subtitle: string
-    promocao: boolean
+    promocao?: boolean
 }
 
 export interface PromocaoProps {
@@ -29,4 +29,5 @@ export interface PromocaoProps {
     pais: string
     artigo: string
     preco: number
+    trecho: string
 }

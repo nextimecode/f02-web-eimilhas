@@ -34,7 +34,7 @@ const Slider = ({
     <Carousel
       swipeable={true}
       draggable={false}
-      showDots={true}
+      showDots={false}
       responsive={responsive}
       ssr={true}
       infinite={true}
@@ -47,15 +47,15 @@ const Slider = ({
     >
       {
         type === 'depoimentos' &&
-                    content.map((d, index) => (
-                      <Depoimento key={index} depoimento={d.depoimento} />
-                    ))
+          content.map((d, index) => (
+            <Depoimento key={index} depoimento={d.depoimento} />
+          ))
       }
       {
         type === 'promocoes' &&
-                    content.map((p, index) => (
-                      <Promocao key={index} promocao={p.promocao} />
-                    ))
+          content.map((p, index) => (
+            <Promocao key={index} promocao={p.promocao} />
+          ))
       }
 
     </Carousel>
