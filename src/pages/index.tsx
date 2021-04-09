@@ -1,5 +1,5 @@
 import React from 'react'
-import BemVindo from '../components/organisms/bemVindo'
+import BemVindo from '../components/organisms/bemvindo'
 import Depoimentos from '../components/organisms/depoimentos'
 import Encontre from '../components/organisms/encontre'
 import Numeros from '../components/organisms/numeros'
@@ -48,7 +48,7 @@ const listNavLinks = [
   }
 ]
 
-export const whatsappUrl = 'https://api.whatsapp.com/send?phone=5537991222087' //whatsapp de teste
+export const whatsappUrl = 'https://api.whatsapp.com/send?phone=5537991222087' // whatsapp de teste
 
 // export const whatsappUrl = 'https://api.whatsapp.com/send?phone=5531991464894'
 export const instagramUrl = 'https://www.instagram.com/eimilhas/'
