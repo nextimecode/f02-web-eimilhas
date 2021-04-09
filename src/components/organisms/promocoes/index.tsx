@@ -1,65 +1,12 @@
 import React from 'react'
+import { PromocaoProps } from '../../../types/types'
 import Subtitle from '../../atoms/subtitle'
 import Title from '../../atoms/title'
 import Slider from '../slider'
 
-const pathLugares = 'assets/img/lugares/fotos'
-const pathBandeiras = 'assets/img/lugares/bandeiras'
+type Props = { promocoes: Record<string, PromocaoProps>[] }
 
-const promocoes = [
-  {
-    promocao: {
-      foto: `${pathLugares}/rio.jpg`,
-      bandeira: `${pathBandeiras}/user.png`,
-      pais: 'Brasil',
-      artigo: 'o',
-      preco: 200,
-      trecho: 'ida e volta'
-    }
-  },
-  {
-    promocao: {
-      foto: `${pathLugares}/rio.jpg`,
-      bandeira: `${pathBandeiras}/user.png`,
-      pais: 'EUA',
-      artigo: 'os',
-      preco: 1500,
-      trecho: 'ida e volta'
-    }
-  },
-  {
-    promocao: {
-      foto: `${pathLugares}/rio.jpg`,
-      bandeira: `${pathBandeiras}/user.png`,
-      pais: 'Inglaterra',
-      artigo: 'a',
-      preco: 3000,
-      trecho: 'ida e volta'
-    }
-  },
-  {
-    promocao: {
-      foto: `${pathLugares}/rio.jpg`,
-      bandeira: `${pathBandeiras}/user.png`,
-      pais: 'Itália',
-      artigo: 'a',
-      preco: 2000,
-      trecho: 'ida e volta'
-    }
-  },
-  {
-    promocao: {
-      foto: `${pathLugares}/rio.jpg`,
-      bandeira: `${pathBandeiras}/user.png`,
-      pais: 'Austrália',
-      artigo: 'a',
-      preco: 5000,
-      trecho: 'ida e volta'
-    }
-  }
-]
-
-const Promocoes = () => {
+const Promocoes = ({ promocoes }: Props) => {
   return (
     <div className="row p-4 mx-0 bg-red">
 

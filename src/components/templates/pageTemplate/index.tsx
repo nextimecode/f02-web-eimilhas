@@ -2,15 +2,18 @@ import React from 'react'
 import Head from 'next/head'
 import Header from '../header'
 import Footer from '../footer'
+import { NavLinkProps } from '../../../types/types'
 
 type Props = {
     children: unknown,
-    title: string
+    title: string,
+    menuLinks: Record<string, NavLinkProps>[]
 }
 
 const PageTemplate = ({
   children,
-  title
+  title,
+  menuLinks
 }: Props) => {
   const urlLogo = 'assets/img/logos/logo_reduzida.png'
 
@@ -32,6 +35,7 @@ const PageTemplate = ({
       <div>
         <Header
           urlLogo={urlLogo}
+          menuLinks={menuLinks}
         />
 
         <main>

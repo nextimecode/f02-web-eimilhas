@@ -12,10 +12,12 @@ const Section = ({
 }: Props) => {
   return (
     <section id={id} >
-      <div className="row m-0" style={{ paddingTop: '20vmin' }}>
-        {children}
+      <div className="site-section">
+        <div className="row site-section">
+          {children}
+        </div>
+        <Separator/>
       </div>
-      <Separator/>
     </section>
   )
 }

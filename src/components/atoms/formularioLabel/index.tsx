@@ -10,7 +10,7 @@ const FormularioLabel = ({
   inputName
 }: Props) => {
   return (
-    <label htmlFor={`${inputName}`} className="form-label mb-0 mt-1">{label}</label>
+    <label htmlFor={`${inputName}`} className="text-uppercase fw-bold mb-0 mt-1">{label}</label>
   )
 }
 

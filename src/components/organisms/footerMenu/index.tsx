@@ -4,8 +4,6 @@ import { Container } from 'react-bootstrap'
 import { instagramUrl } from '../../../pages/index'
 import Subtitle from '../../atoms/subtitle'
 
-import './style.scss'
-
 type Props = {
     urlLogo: string
 }
@@ -14,7 +12,7 @@ const FooterMenu = ({
   urlLogo
 }: Props) => {
   return (
-    <Container className="footer-menu p-4" fluid={true}>
+    <Container className="bg-blue text-white font-primary p-4" fluid={true}>
       <div className="row">
         <div className="col-sm-12 col-md-6 p-2">
           <div className="text-center">

@@ -1,59 +1,21 @@
 import React from 'react'
+import { NavLinkProps } from '../../../types/types'
 import Menu from '../../molecules/menu'
 
 type Props = {
-    urlLogo: string
+    urlLogo: string,
+    menuLinks: Record<string, NavLinkProps>[]
 }
 
 const Header = ({
-  urlLogo
+  urlLogo,
+  menuLinks
 }: Props) => {
-  const listNavLinks = [
-    {
-      navLink: {
-        href: '#home',
-        label: 'Home'
-      }
-    },
-    {
-      navLink: {
-        href: '#pagamento',
-        label: 'Pagamento'
-      }
-    },
-    {
-      navLink: {
-        href: '#promocoes',
-        label: 'Promoções'
-      }
-    },
-    {
-      navLink: {
-        href: '#',
-        label: 'A Empresa',
-        items: [
-          {
-            navLink: {
-              href: '#depoimentos',
-              label: 'O que os clientes dizem?'
-            }
-          },
-          {
-            navLink: {
-              href: '#numeros',
-              label: 'Números da Empresa'
-            }
-          }
-        ]
-      }
-    }
-  ]
-
   return (
     <header id="home">
       <Menu
         urlLogo={urlLogo}
-        listNavLinks={listNavLinks}
+        listNavLinks={menuLinks}
       />
     </header>
   )

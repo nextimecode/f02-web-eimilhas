@@ -4,8 +4,6 @@ import 'react-multi-carousel/lib/styles.css'
 import Depoimento from '../../molecules/depoimento'
 import Promocao from '../../molecules/promocao'
 
-import './style.scss'
-
 type Props = {
     content: any
     type: string

@@ -31,3 +31,8 @@ export interface PromocaoProps {
     preco: number
     trecho: string
 }
+
+export interface DescricaoFormaPagamentoProps {
+    descricao: string
+    enfase: string
+}

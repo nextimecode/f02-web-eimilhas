@@ -1,11 +1,9 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 
-import './style.scss'
-
 const FooterOwners = () => {
   return (
-    <Container className="footer-owners py-2" fluid={true}>
+    <Container className="bg-red text-white font-primary py-2" fluid={true}>
       <div className="row">
 
         <div className="col-6 text-center py-2">

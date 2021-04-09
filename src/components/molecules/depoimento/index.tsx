@@ -2,8 +2,6 @@ import React from 'react'
 import { DepoimentoProps } from '../../../types/types'
 import Pessoa from '../pessoa'
 
-import './style.scss'
-
 type Props = {
     depoimento: DepoimentoProps
 }
@@ -13,9 +11,9 @@ const Depoimento = ({ depoimento }: Props) => {
     <div className="container-fluid mb-5">
       <div className="row justify-content-center">
         <div className="mb-2">
-          <div className="card-depoimento p-4">
-            <p className="post">
-              <span className="post-txt">{depoimento.texto}</span>
+          <div className="bg-cyan text-black rounded-3 position-relative p-4">
+            <p className="post text-justify">
+              <span className="mb-0">{depoimento.texto}</span>
             </p>
           </div>
           <div className="arrow-down"></div>

@@ -1,84 +1,11 @@
-import React, { useEffect, useReducer, useState } from 'react'
+import React, { useState } from 'react'
 import Title from '../../atoms/title'
 import DatePicker from 'react-datepicker'
-import FormularioLabel from '../../atoms/formulario-label'
+import FormularioLabel from '../../atoms/formularioLabel'
 
-import './style.scss'
 import 'react-datepicker/dist/react-datepicker.css'
-import { Button } from 'react-bootstrap'
 
 const Encontre = () => {
-
-  const handleInputChange = (event) => {
-    const target = event.target
-    const value = target.type === 'checkbox' ? target.checked : target.value
-    const name = target.name
-
-    setFormData({...formData, [name]: value, pronto: estaPronto()})
-  }
-
-  const handleDataChange = (event, trecho) => {
-    if (trecho === 'ida') {
-      setFormData({...formData, ida: event})
-    }
-    if (trecho === 'volta') {
-      setFormData({...formData, volta: event})
-    }
-  }
-
-  const decrementarPessoa = (event, field) => {
-    switch (field) {
-    case 'adultos':
-      if (formData.adultos > 1) {
-        setFormData({...formData, adultos: formData.adultos - 1})
-      }
-      break
-    case 'criancas':
-      if (formData.criancas > 0) {
-        setFormData({...formData, criancas: formData.criancas - 1})
-      }
-      break
-    case 'bebes':
-      if (formData.bebes > 0) {
-        setFormData({...formData, bebes: formData.bebes - 1})
-      }
-      break
-    default:
-      break
-    }
-  }
-
-  const incrementarPessoa = (event, field) => {
-    switch (field) {
-    case 'adultos':
-      setFormData({...formData, adultos: formData.adultos + 1})
-      break
-    case 'criancas':
-      setFormData({...formData, criancas: formData.criancas + 1})
-      break
-    case 'bebes':
-      setFormData({...formData, bebes: formData.bebes + 1})
-      break
-    default:
-      break
-    }
-  }
-
-  const trocarRota = (event) => {
-    event.preventDefault()
-    let aux = formData.origem
-    setFormData({...formData, origem: formData.destino, destino: aux })
-  }
-
-  const estaPronto = () => {
-    console.log('deu')
-    if (formData.origem === '' || formData.destino === '') {
-      return false
-    } else {
-      return formData.soIda ? true : (formData.volta != undefined ? true : false)
-    }
-  }
-
   const urlWallpaper = 'assets/img/rio.jpg'
   const now = new Date()
 
@@ -94,14 +21,90 @@ const Encontre = () => {
     soIda: false
   })
 
+  const estaPronto = () => {
+    event.preventDefault()
+    if (formData.origem === '' || formData.destino === '') {
+      return false
+    } else {
+      return formData.soIda ? true : (formData.volta !== undefined)
+    }
+  }
+
+  const handleInputChange = (event) => {
+    event.preventDefault()
+    const target = event.target
+    const value = target.type === 'checkbox' ? target.checked : target.value
+    const name = target.name
+
+    setFormData({ ...formData, [name]: value, pronto: estaPronto() })
+  }
+
+  const handleDataChange = (event, trecho) => {
+    if (trecho === 'ida') {
+      setFormData({ ...formData, ida: event })
+    }
+    if (trecho === 'volta') {
+      setFormData({ ...formData, volta: event })
+    }
+  }
+
+  const decrementarPessoa = (event, field) => {
+    event.preventDefault()
+    switch (field) {
+    case 'adultos':
+      if (formData.adultos > 1) {
+        setFormData({ ...formData, adultos: formData.adultos - 1 })
+      }
+      break
+    case 'criancas':
+      if (formData.criancas > 0) {
+        setFormData({ ...formData, criancas: formData.criancas - 1 })
+      }
+      break
+    case 'bebes':
+      if (formData.bebes > 0) {
+        setFormData({ ...formData, bebes: formData.bebes - 1 })
+      }
+      break
+    default:
+      break
+    }
+  }
+
+  const incrementarPessoa = (event, field) => {
+    event.preventDefault()
+    switch (field) {
+    case 'adultos':
+      setFormData({ ...formData, adultos: formData.adultos + 1 })
+      break
+    case 'criancas':
+      setFormData({ ...formData, criancas: formData.criancas + 1 })
+      break
+    case 'bebes':
+      setFormData({ ...formData, bebes: formData.bebes + 1 })
+      break
+    default:
+      break
+    }
+  }
+
+  const trocarRota = (event) => {
+    event.preventDefault()
+    const aux = formData.origem
+    setFormData({ ...formData, origem: formData.destino, destino: aux })
+  }
+
   return (
 
     <div className="container">
-      <div className="row p-0 form-encontre rounded">
+      <div className="row p-0 bg-orange rounded">
 
         <div
-          className="col-xs-12 col-md-4 bg-encontre"
-          style={{ backgroundImage: `url("${urlWallpaper}")` }}
+          className="col-xs-12 col-md-4 bg-image"
+          style={{
+            backgroundImage: `url("${urlWallpaper}")`,
+            minHeight: '120px'
+          }}
         >
         </div>
 
@@ -116,7 +119,7 @@ const Encontre = () => {
 
                   <div className="row my-2">
 
-                    <div className="col-4 col-sm-4 px-3 text-center">
+                    <div className="col-xs-12 col-sm-4 px-3 text-center">
 
                       <div className="row">
                         <FormularioLabel
@@ -126,30 +129,30 @@ const Encontre = () => {
                       </div>
                       <div className="row">
                         <div className="col-3 px-0">
-                          <Button
-                            className="btn-increment py-0 px-2"
+                          <button
+                            className="btn-increment rounded py-0 px-2"
                             onClick={(e) => decrementarPessoa(e, 'adultos')}
-                          >-</Button>
+                          >-</button>
                         </div>
                         <div className="col-6 px-1">
                           <input
                             name="adultos"
-                            type="text"
-                            className="input-pessoa w-100"
+                            type="number"
+                            className="input-pessoa text-center w-100"
                             value={formData.adultos}
                             onChange={(e) => handleInputChange(e)}
                           />
                         </div>
                         <div className="col-3 px-0">
-                          <Button
-                            className="btn-increment py-0 px-2"
+                          <button
+                            className="btn-increment rounded py-0 px-2"
                             onClick={(e) => incrementarPessoa(e, 'adultos')}
-                          >+</Button>
+                          >+</button>
                         </div>
                       </div>
                     </div>
 
-                    <div className="col-4 px-3 text-center">
+                    <div className="col-xs-12 col-sm-4 px-3 text-center">
                       <div className="row">
                         <FormularioLabel
                           label="Crianças"
@@ -158,30 +161,30 @@ const Encontre = () => {
                       </div>
                       <div className="row">
                         <div className="col-3 px-0">
-                          <Button
-                            className="btn-increment py-0 px-2"
+                          <button
+                            className="btn-increment rounded py-0 px-2"
                             onClick={(e) => decrementarPessoa(e, 'criancas')}
-                          >-</Button>
+                          >-</button>
                         </div>
                         <div className="col-6 px-1">
                           <input
                             name="criancas"
-                            type="text"
-                            className="input-pessoa w-100"
+                            type="number"
+                            className="input-pessoa text-center w-100"
                             value={formData.criancas}
                             onChange={(e) => handleInputChange(e)}
                           />
                         </div>
                         <div className="col-3 px-0">
-                          <Button
-                            className="btn-increment py-0 px-2"
+                          <button
+                            className="btn-increment rounded py-0 px-2"
                             onClick={(e) => incrementarPessoa(e, 'criancas')}
-                          >+</Button>
+                          >+</button>
                         </div>
                       </div>
                     </div>
 
-                    <div className="col-4 px-3 text-center">
+                    <div className="col-xs-12 col-sm-4 px-3 text-center">
                       <div className="row">
                         <FormularioLabel
                           label="Bebês"
@@ -190,25 +193,25 @@ const Encontre = () => {
                       </div>
                       <div className="row">
                         <div className="col-3 px-0">
-                          <Button
-                            className="btn-increment py-0 px-2"
+                          <button
+                            className="btn-increment rounded py-0 px-2"
                             onClick={(e) => decrementarPessoa(e, 'bebes')}
-                          >-</Button>
+                          >-</button>
                         </div>
                         <div className="col-6 px-1">
                           <input
                             name="bebes"
-                            type="text"
-                            className="input-pessoa w-100"
+                            type="number"
+                            className="input-pessoa text-center w-100"
                             value={formData.bebes}
                             onChange={(e) => handleInputChange(e)}
                           />
                         </div>
                         <div className="col-3 px-0">
-                          <Button
-                            className="btn-increment py-0 px-2"
+                          <button
+                            className="btn-increment rounded py-0 px-2"
                             onClick={(e) => incrementarPessoa(e, 'bebes')}
-                          >+</Button>
+                          >+</button>
                         </div>
                       </div>
                     </div>
@@ -226,11 +229,11 @@ const Encontre = () => {
                       inputName="origem"
                     />
                   </div>
-                  <div className="row">
+                  <div className="row px-2">
                     <input
                       name="origem"
                       type="text"
-                      className="input-rota m-auto"
+                      className="m-auto"
                       value={formData.origem}
                       onChange={(e) => handleInputChange(e)}
                     />
@@ -244,11 +247,11 @@ const Encontre = () => {
                       inputName="destino"
                     />
                   </div>
-                  <div className="row">
+                  <div className="row px-2">
                     <input
                       name="destino"
                       type="text"
-                      className="input-rota m-auto"
+                      className="m-auto"
                       value={formData.destino}
                       onChange={(e) => handleInputChange(e)}
                     />
@@ -256,10 +259,11 @@ const Encontre = () => {
                 </div>
 
                 <div className="col-sm-12 col-md-4 text-center my-1">
-                  <Button
-                    className="btn-change w-75"
+                  <button
+                    className="text-white rounded w-75"
+                    style={{ maxWidth: '200px' }}
                     onClick={(e) => trocarRota(e)}
-                  >Inverter<br/>{'<>'}</Button>
+                  >Inverter<br/>{'<>'}</button>
                 </div>
 
               </div>
@@ -290,14 +294,14 @@ const Encontre = () => {
                       inputName="ida"
                     />
                   </div>
-                  <div className="row">
+                  <div className="row px-2">
                     <DatePicker
                       name="ida"
                       selected={formData.ida}
                       dateFormat="dd/MM/yyyy"
                       onChange={(e) => handleDataChange(e, 'ida')}
                       minDate={now}
-                      className="input-data"
+                      className="w-100 text-center"
                     />
                   </div>
                 </div>
@@ -310,14 +314,14 @@ const Encontre = () => {
                         inputName="volta"
                       />
                     </div>
-                    <div className="row">
+                    <div className="row px-2">
                       <DatePicker
                         name="volta"
                         selected={formData.volta}
                         dateFormat="dd/MM/yyyy"
                         onChange={(e) => handleDataChange(e, 'volta')}
                         minDate={now}
-                        className="input-data"
+                        className="w-100 text-center"
                       />
                     </div>
                   </div>
@@ -329,9 +333,10 @@ const Encontre = () => {
 
                 <div className="col-12 px-3 text-center">
                   <div className="row">
-                    <Button
+                    <button
+                      className="py-1 px-2 rounded"
                       disabled={!formData.pronto}
-                    >Buscar passagens</Button>
+                    >Buscar passagens</button>
                   </div>
                 </div>
 
@@ -345,7 +350,6 @@ const Encontre = () => {
 
     </div>
   )
-
 }
 
 export default Encontre

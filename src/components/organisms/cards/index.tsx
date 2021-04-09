@@ -2,13 +2,9 @@ import React from 'react'
 import { CardProps } from '../../../types/types'
 import Card from '../../molecules/card'
 
-type Props = {
-    cards: Record<string, CardProps>[]
-}
+type Props = { cards: Record<string, CardProps>[] }
 
-const Cards = ({
-  cards
-}: Props) => {
+const Cards = ({ cards }: Props) => {
   return (
     <div className="row p-4 mx-0 justify-content-center">
       {cards.map((c, index) => (

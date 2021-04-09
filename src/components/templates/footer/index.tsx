@@ -1,7 +1,7 @@
 import React from 'react'
 import Separator from '../../atoms/separator'
-import FooterOwners from '../../organisms/footer-owners'
-import FooterMenu from '../../organisms/footer-menu'
+import FooterOwners from '../../organisms/footerOwners'
+import FooterMenu from '../../organisms/footerMenu'
 
 type Props = {
     urlLogo: string
