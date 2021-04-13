@@ -1,3 +1,185 @@
-@import '~bootstrap/scss/bootstrap';
-
 @import "./custom/variables";
+
+.site-section{
+    padding-top: 10vmin;
+}
+
+.separator {
+    opacity: 1 !important;
+    color: $white;
+    height: 5px !important;
+}
+
+h1, h2 { font-family: $font-01; }
+
+.font-primary { font-family: $font-01; }
+
+.text-justify { text-align: justify; }
+
+.text-primary { color: $primary; }
+
+.text-red { color: $red; }
+
+.text-orange { color: $orange; }
+
+.text-white { color: $white; }
+
+.text-yellow { color: $yellow; }
+
+.text-gray { color: $gray-700; }
+
+.bg-orange { background-color: $orange; }
+
+.bg-red { background-color: $red; }
+
+.bg-cyan { background-color: $cyan; }
+
+.bg-blue { background-color: $blue; }
+
+.bg-black { background-color: $black; }
+
+.bg-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+button {
+    background-color: $primary;
+    color: $white;
+    font-family: $font-01;
+    font-weight: 500;
+    text-transform: uppercase !important;
+}
+
+button:disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}
+
+a:link {
+    text-decoration: none;
+    color: inherit;
+    transition: .3s;
+}
+
+a:hover {
+    transition: .3s;
+    color: $orange;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 20px solid $cyan;
+    margin-left: 85px;
+}
+
+.card-pagamento {
+    box-shadow:  5px 5px 5px $orange;
+    border-color: $primary;
+    border-style: solid;
+    border-width: 2px;
+    .card-img-top { max-width: 128px; }
+}
+
+.card-overlay {
+    background-color: $orange;
+    height: 0;
+    transition: .5s ease;
+    padding: 0 1rem;
+}
+
+.card-pagamento:hover .card-overlay {
+    height: 100%;
+    padding-top: 1.5rem;
+}
+
+.menu-position { z-index: 1; }
+
+#menu-logo { width: min(30vw, 300px); }
+
+.nav-link { color: $white !important; }
+
+.nav-link:hover { color: $red !important; }
+
+.navbar-light .navbar-toggler {
+    background-color: $white;
+    border-color: $white;
+}
+
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-nav .dropdown-menu {
+        right: 1vh;
+    }
+}
+
+.fit-cover { object-fit: cover; }
+
+.div-link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
+.opacity-0 { opacity: 0; }
+
+.opacity-1 { opacity: 1; }
+
+.card-promocao {
+    box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.6);
+    transition: .5s ease;
+    padding: 1rem 0;
+}
+
+.card-middle {
+    transition: .5s ease;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
+}
+
+.card-promocao:hover{
+    box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.8);
+    .card-middle { opacity: 1; }
+    .card-preco { opacity: 0; }
+}
+
+.qrcode {
+    width: 120px;
+    border-radius: 20px;
+}
+
+.react-multiple-carousel__arrow--left::before {
+    content: '<' !important;
+    font-weight: 900;
+}
+.react-multiple-carousel__arrow--right::before {
+    content: '>' !important;
+    font-weight: 900;
+}
+.react-multiple-carousel__arrow {
+    border-color: $red;
+    border-width: 5px;
+    border-style: inset;
+    bottom: 84px;
+}
+
+input[type=text], input[type=number] { border-radius: 5px; }
+
+input[type=checkbox] {
+    transform: scale(2);
+    width: auto;
+}
+
+.input-pessoa { width: 30px; }
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+@import '~bootstrap/scss/bootstrap';
