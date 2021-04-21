@@ -16,7 +16,7 @@ const Cards = ({ cards }: Props) => {
             title={c.card.title}
             image={c.card.imageIcon}
           >
-            <div className="text-primary fw-bold fs-4">
+            <div className="text-red fw-bold fs-4">
               {c.card.subtitle}
             </div>
           </Card>

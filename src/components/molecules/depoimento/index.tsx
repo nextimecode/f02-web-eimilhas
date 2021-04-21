@@ -9,15 +9,13 @@ type Props = {
 const Depoimento = ({ depoimento }: Props) => {
   return (
     <div className="container-fluid mb-5">
-      <div className="row justify-content-center">
-        <div className="mb-2">
-          <div className="bg-cyan text-black rounded-3 position-relative p-4">
-            <p className="post text-justify">
-              <span className="mb-0">{depoimento.texto}</span>
-            </p>
-          </div>
-          <div className="arrow-down"></div>
+      <div className="depoimento rounded-15 border-gray row justify-content-center mb-2">
+        <div className="text-white rounded position-relative p-4">
+          <p className="post text-justify font-primary">
+            <span className="mb-0">{depoimento.texto}</span>
+          </p>
         </div>
+        <hr className="depoimento-separator w-75"/>
         <Pessoa
           foto={depoimento.foto}
           nome={depoimento.nome}

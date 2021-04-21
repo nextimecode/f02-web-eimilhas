@@ -3,21 +3,34 @@ import Separator from '../../atoms/separator'
 
 type Props = {
     children: unknown,
-    id?: string
+    id?: string,
+    bgUrl?: string,
+    bgColor?: string,
+    classes?: string
 }
 
 const Section = ({
   children,
-  id
+  id,
+  bgUrl,
+  bgColor,
+  classes
 }: Props) => {
   return (
-    <section id={id} >
-      <div className="site-section">
-        <div className="row site-section">
+    <section
+      id={id}
+      style={{ backgroundImage: `url("${bgUrl}")` }}
+      className={`${classes}`}
+    >
+      <div
+        className="container mw-100 p-0"
+        style={{ backgroundColor: bgColor }}
+      >
+        <div className="row w-100 mx-0 site-section">
           {children}
         </div>
-        <Separator/>
       </div>
+      <Separator/>
     </section>
   )
 }

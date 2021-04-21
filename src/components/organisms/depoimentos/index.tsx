@@ -1,6 +1,7 @@
 import React from 'react'
 import Subtitle from '../../atoms/subtitle'
 import Title from '../../atoms/title'
+import PlaneSeparator from '../../molecules/planeSeparator'
 import Slider from '../slider'
 
 const pathAvatars = 'assets/img/avatars'
@@ -33,15 +34,16 @@ const depoimentos = [
 
 const Depoimentos = () => {
   return (
-    <div className="row p-4">
+    <div className="row p-4 text-center">
       <Title
         label="Depoimentos"
-        color="primary"
+        color="white"
       />
       <Subtitle
         label="Veja o que nossos clientes dizem"
-        color="red"
+        color="yellow"
       />
+      <PlaneSeparator/>
       <Slider content={depoimentos} type="depoimentos" />
     </div>
   )

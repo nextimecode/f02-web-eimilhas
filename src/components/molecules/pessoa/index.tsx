@@ -13,8 +13,8 @@ const Pessoa = ({ foto, nome, profissao = '' }: Props) => (
         className="p-0 rounded-circle fit-cover w-50"
         src={foto}
       />
-      <p className="profile mt-3 mb-0 text-center fw-bold">{nome}</p>
-      <p className="profile mt-0 text-gray text-center">
+      <p className="profile mt-3 mb-0 text-orange text-center fw-bold font-primary">{nome}</p>
+      <p className="profile mt-0 text-white text-center font-primary">
         {profissao}
       </p>
     </div>
