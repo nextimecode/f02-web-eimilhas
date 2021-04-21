@@ -25,23 +25,30 @@ const Promocao = ({
       rel="noreferrer"
     >
       <div
-        className="rounded h-100 py-4 text-center m-4 bg-black bg-image opacity-1 card-promocao"
-        style={{ backgroundImage: `url("${promocao.foto}")` }}
+        className="card-promocao rounded-15 p-1 text-center m-4"
       >
-        <div className="card-body">
-          <span className="text-uppercase"><Title label={promocao.pais} color="yellow"/></span>
-          <div className="card-preco">
-            <p className="fw-5 text-white my-0">A partir de </p>
-            <Preco value={promocao.preco} color="white"/>
-            <p className="fw-5 text-white my-0">{promocao.trecho}</p>
+        <div
+          className="card-head bg-image rounded-top-15 position-relative"
+          style={{
+            backgroundImage: `url("${promocao.foto}")`,
+            minHeight: '200px'
+          }}
+        >
+          <div className="card-middle position-absolute opacity-0 top-50 start-50">
+            <button
+              className="rounded-3 font-primary border-0 fs-2 fw-bold bg-orange py-2 px-3"
+            >
+              Reserve Agora
+            </button>
           </div>
         </div>
-        <div className="card-middle position-absolute opacity-0 top-50 start-50 mt-5">
-          <button
-            className="rounded-3 text-primary bg-orange py-2 px-3"
-          >
-            Reserve Agora
-          </button>
+        <div className="card-body">
+          <div className="card-preco">
+            <span className="text-uppercase"><Title label={promocao.pais} color="primary"/></span>
+            <p className="fw-5 text-black my-0">A partir de </p>
+            <Preco value={promocao.preco} color="black"/>
+            <p className="fw-5 text-black my-0">{promocao.trecho}</p>
+          </div>
         </div>
 
       </div>

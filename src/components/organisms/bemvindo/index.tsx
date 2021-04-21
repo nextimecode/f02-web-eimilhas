@@ -12,7 +12,7 @@ const BemVindo = ({
   formasPagamento
 } : Props) => {
   return (
-    <div className="row p-4 mx-0 bg-primary">
+    <div className="row mx-0 text-center">
 
       <Title
         label="Bem vindos ao EiMilhas!"

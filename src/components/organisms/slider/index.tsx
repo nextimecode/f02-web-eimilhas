@@ -15,15 +15,15 @@ const Slider = ({
 }: Props) => {
   const responsive = {
     desktop: {
-      breakpoint: { max: 3000, min: 1301 },
+      breakpoint: { max: 3000, min: 992 },
       items: 3
     },
     tablet: {
-      breakpoint: { max: 1300, min: 1001 },
+      breakpoint: { max: 991, min: 700 },
       items: 2
     },
     mobile: {
-      breakpoint: { max: 1000, min: 0 },
+      breakpoint: { max: 699, min: 0 },
       items: 1
     }
   }

@@ -14,12 +14,12 @@ const listNavLinks = [
       label: 'Home'
     }
   },
-  {
-    navLink: {
-      href: '#pagamento',
-      label: 'Pagamento'
-    }
-  },
+  // {
+  //   navLink: {
+  //     href: '#pagamento',
+  //     label: 'Pagamento'
+  //   }
+  // },
   {
     navLink: {
       href: '#promocoes',
@@ -181,11 +181,13 @@ const Index: React.FC = () => {
       menuLinks={listNavLinks}
     >
 
-      <Section id="home">
+      <Section
+        id="home"
+        bgUrl='assets/img/traveller.jpg'
+        bgColor='rgba(17,26,58,0.7)'
+        classes="min-vh-100 bg-image"
+      >
         <Encontre/>
-      </Section>
-
-      <Section id="pagamento">
         <BemVindo formasPagamento={formasPagamento}/>
       </Section>
 
@@ -193,11 +195,21 @@ const Index: React.FC = () => {
         <Promocoes promocoes={promocoes}/>
       </Section>
 
-      <Section id="depoimentos">
+      <Section
+        id="depoimentos"
+        bgUrl='assets/img/traveller2.jpg'
+        bgColor='rgba(17,26,58,0.8)'
+        classes="min-vh-50 bg-image bg-position-top my-5"
+      >
         <Depoimentos/>
       </Section>
 
-      <Section id="numeros">
+      <Section
+        id="numeros"
+        bgUrl='assets/img/customers.jpg'
+        bgColor='rgba(255,255,255,0.7)'
+        classes="min-vh-50 bg-image bg-position-top my-5"
+      >
         <Numeros/>
       </Section>
 
