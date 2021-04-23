@@ -171,6 +171,12 @@ a:hover {
 
 .react-datepicker-wrapper { display: block !important;}
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 .form-passagem {
 
     input[type=text], input[type=number] {
@@ -213,12 +219,6 @@ a:hover {
     }
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
-}
-
 @media all and (min-width: 768px) {
     .form-passagem {
         margin: 10vh !important;
@@ -229,6 +229,11 @@ input[type=number]::-webkit-outer-spin-button {
         left: 50% !important;
         bottom: 0 !important;
     }
+}
+
+.btn-reserve {
+    color: $white;
+    text-transform: uppercase;
 }
 
 @media all and (max-width: 767px) {
@@ -250,6 +255,18 @@ hr.contrail-white {
 hr.contrail-primary {
     background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(23,51,86,1));
 }
-  
+
+.collapse-header{
+    cursor: pointer;
+    border: solid 1px $gray-300;
+    border-radius: 4px 4px 0 0;
+}
+.collapse-content{
+    cursor: pointer;
+    border-left: solid 1px $gray-300;
+    border-right: solid 1px $gray-300;
+    border-bottom: solid 1px $gray-300;
+    border-radius: 0 0 4px 4px;
+}
 
 @import '~bootstrap/scss/bootstrap';

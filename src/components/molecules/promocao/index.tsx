@@ -36,7 +36,7 @@ const Promocao = ({
         >
           <div className="card-middle position-absolute opacity-0 top-50 start-50">
             <button
-              className="rounded-3 font-primary border-0 fs-2 fw-bold bg-orange py-2 px-3"
+              className="btn-reserve rounded-3 font-primary border-0 fs-2 fw-bold bg-orange py-2 px-3"
             >
               Reserve Agora
             </button>

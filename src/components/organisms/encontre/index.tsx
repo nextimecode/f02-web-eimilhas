@@ -5,6 +5,7 @@ import FormularioLabel from '../../atoms/formularioLabel'
 
 import 'react-datepicker/dist/react-datepicker.css'
 import PlaneSeparator from '../../molecules/planeSeparator'
+import { Collapsible } from '../../molecules/collabsible'
 
 const Encontre = () => {
   const urlWallpaper = 'assets/img/plane3.jpg'
@@ -115,15 +116,15 @@ const Encontre = () => {
     )
   }
 
-  const btnTrocarRota = 
+  const btnTrocarRota =
   (
     <button
       className="btn-trocar my-1 bg-red text-white rounded-circle position-absolute"
       onClick={(e) => trocarRota(e)}
     >⇋</button>
   )
-  
-  const btnBuscarPassagens = 
+
+  const btnBuscarPassagens =
   (
     <button
       className="py-1 px-2 rounded bg-red text-white w-100"
@@ -134,7 +135,7 @@ const Encontre = () => {
   return (
 
     <div className="container my-5">
-      <div className="row mx-0 bg-image form-passagem rounded-15"
+      <div className="row mx-0 bg-image form-passagem rounded-15 font-primary"
         style={{
           backgroundImage: `url(${urlWallpaper})`,
           minHeight: '120px'
@@ -142,7 +143,7 @@ const Encontre = () => {
 
         <div
           className="rounded-15 p-4"
-          style={{ backgroundColor: 'rgba(255,255,255,0.6)'}}
+          style={{ backgroundColor: 'rgba(255,255,255,0.6)' }}
         >
 
           <Title
@@ -235,75 +236,82 @@ const Encontre = () => {
 
                 </div>
 
-                <div className="row mb-3">
-                  <div className="col-xs-12 col-sm-4 px-3 my-1 text-center">
-                    <div className="row">
-                      {btnDecrementarPessoa('adultos')}
-                      <div className="col-6 px-1">
-                        <input
-                          name="adultos"
-                          type="number"
-                          className="text-center w-100"
-                          value={formData.adultos}
-                          onChange={(e) => handleInputChange(e)}
+                <Collapsible title="Passageiros">
+
+                  <div className="row">
+                    <div className="col-xs-12 col-sm-4 px-3 my-1 text-center">
+                      <div className="row">
+                        {btnDecrementarPessoa('adultos')}
+                        <div className="col-6 px-1">
+                          <input
+                            name="adultos"
+                            type="number"
+                            className="text-center w-100"
+                            value={formData.adultos}
+                            onChange={(e) => handleInputChange(e)}
+                          />
+                        </div>
+                        {btnIncrementarPessoa('adultos')}
+                      </div>
+                      <div className="row">
+                        <FormularioLabel
+                          label="Adultos"
+                          inputName="txtAdultos"
                         />
                       </div>
-                      {btnIncrementarPessoa('adultos')}
                     </div>
-                    <div className="row">
-                      <FormularioLabel
-                        label="Adultos"
-                        inputName="txtAdultos"
-                      />
+
+                    <div className="col-xs-12 col-sm-4 px-3 my-1 text-center">
+                      <div className="row">
+                        {btnDecrementarPessoa('criancas')}
+                        <div className="col-6 px-1">
+                          <input
+                            name="criancas"
+                            type="number"
+                            className="text-center w-100"
+                            value={formData.criancas}
+                            onChange={(e) => handleInputChange(e)}
+                          />
+                        </div>
+                        {btnIncrementarPessoa('criancas')}
+                      </div>
+                      <div className="row">
+                        <FormularioLabel
+                          label="Crianças"
+                          inputName="txtCriancas"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="col-xs-12 col-sm-4 px-3 my-1 text-center">
+                      <div className="row">
+                        {btnDecrementarPessoa('bebes')}
+                        <div className="col-6 px-1">
+                          <input
+                            name="bebes"
+                            type="number"
+                            className="text-center w-100"
+                            value={formData.bebes}
+                            onChange={(e) => handleInputChange(e)}
+                          />
+                        </div>
+                        {btnIncrementarPessoa('bebes')}
+                      </div>
+                      <div className="row">
+                        <FormularioLabel
+                          label="Bebês"
+                          inputName="txtBebes"
+                        />
+                      </div>
                     </div>
                   </div>
+                </Collapsible>
 
-                  <div className="col-xs-12 col-sm-4 px-3 my-1 text-center">
-                    <div className="row">
-                      {btnDecrementarPessoa('criancas')}
-                      <div className="col-6 px-1">
-                        <input
-                          name="criancas"
-                          type="number"
-                          className="text-center w-100"
-                          value={formData.criancas}
-                          onChange={(e) => handleInputChange(e)}
-                        />
-                      </div>
-                      {btnIncrementarPessoa('criancas')}
-                    </div>
-                    <div className="row">
-                      <FormularioLabel
-                        label="Crianças"
-                        inputName="txtCriancas"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="col-xs-12 col-sm-4 px-3 my-1 text-center">
-                    <div className="row">
-                      {btnDecrementarPessoa('bebes')}
-                      <div className="col-6 px-1">
-                        <input
-                          name="bebes"
-                          type="number"
-                          className="text-center w-100"
-                          value={formData.bebes}
-                          onChange={(e) => handleInputChange(e)}
-                        />
-                      </div>
-                      {btnIncrementarPessoa('bebes')}
-                    </div>
-                    <div className="row">
-                      <FormularioLabel
-                        label="Bebês"
-                        inputName="txtBebes"
-                      />
-                    </div>
+                <div className="row my-2">
+                  <div className="col">
+                    {btnBuscarPassagens}
                   </div>
                 </div>
-
-                {btnBuscarPassagens}
 
               </div>
             </form>
