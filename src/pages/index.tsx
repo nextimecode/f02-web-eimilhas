@@ -176,10 +176,7 @@ const promocoes = [
 
 const Index: React.FC = () => {
   return (
-    <PageTemplate
-      title="Home"
-      menuLinks={listNavLinks}
-    >
+    <PageTemplate menuLinks={listNavLinks}>
 
       <Section
         id="home"

@@ -4,6 +4,7 @@ import DatePicker from 'react-datepicker'
 import FormularioLabel from '../../atoms/formularioLabel'
 
 import 'react-datepicker/dist/react-datepicker.css'
+import PlaneSeparator from '../../molecules/planeSeparator'
 
 const Encontre = () => {
   const urlWallpaper = 'assets/img/plane3.jpg'
@@ -16,13 +17,12 @@ const Encontre = () => {
     bebes: 0,
     origem: '',
     destino: '',
-    ida: now,
+    ida: undefined,
     volta: undefined,
     soIda: false
   })
 
   const estaPronto = () => {
-    event.preventDefault()
     if (formData.origem === '' || formData.destino === '') {
       return false
     } else {
@@ -31,7 +31,6 @@ const Encontre = () => {
   }
 
   const handleInputChange = (event) => {
-    event.preventDefault()
     const target = event.target
     const value = target.type === 'checkbox' ? target.checked : target.value
     const name = target.name
@@ -96,25 +95,41 @@ const Encontre = () => {
 
   const btnDecrementarPessoa = (tipo) => {
     return (
-      <div className="col-3 px-0">
+      <div className="col-3 px-0 m-auto">
         <button
-          className="btn-increment rounded py-0 px-2"
+          className="btn-increment rounded-circle"
           onClick={(e) => decrementarPessoa(e, tipo)}
-        >-</button>
+        >−</button>
       </div>
     )
   }
 
   const btnIncrementarPessoa = (tipo) => {
     return (
-      <div className="col-3 px-0">
+      <div className="col-3 px-0 m-auto">
         <button
-          className="btn-increment rounded py-0 px-2"
+          className="btn-increment rounded-circle"
           onClick={(e) => incrementarPessoa(e, tipo)}
-        >+</button>
+        >✚</button>
       </div>
     )
   }
+
+  const btnTrocarRota = 
+  (
+    <button
+      className="btn-trocar my-1 bg-red text-white rounded-circle position-absolute"
+      onClick={(e) => trocarRota(e)}
+    >⇋</button>
+  )
+  
+  const btnBuscarPassagens = 
+  (
+    <button
+      className="py-1 px-2 rounded bg-red text-white w-100"
+      disabled={!formData.pronto}
+    >Buscar passagens</button>
+  )
 
   return (
 
@@ -126,138 +141,49 @@ const Encontre = () => {
         }}>
 
         <div
-          className="rounded-15 py-3"
-          style={{
-            backgroundColor: 'rgba(255,255,255,0.3)'
-          }}
+          className="rounded-15 p-4"
+          style={{ backgroundColor: 'rgba(255,255,255,0.6)'}}
         >
-          <div className="col-md-9 col-sm-12 p-4">
 
-            <Title label="Encontre sua passagem ideal com o maior desconto!" color="primary"/>
+          <Title
+            label="Encontre sua passagem ideal com o maior desconto!"
+            color="primary"
+          />
+          <PlaneSeparator
+            size={30}
+            color="primary"
+            widthPercentage={100}
+            gridColPlane={1}
+          />
+          <div className="col-md-9 col-sm-12">
             <form id="form-encontrar-passagem">
               <div className="container p-1">
 
-                <div className="row mb-3">
-                  <div className="col-sm-12 col-md-10 col-lg-8">
+                <div className="row mb-3 position-relative">
 
-                    <div className="row my-2">
-
-                      <div className="col-xs-12 col-sm-4 px-3 text-center">
-
-                        <div className="row">
-                          <FormularioLabel
-                            label="Adultos"
-                            inputName="txtAdultos"
-                          />
-                        </div>
-                        <div className="row">
-                          {btnDecrementarPessoa('adultos')}
-                          <div className="col-6 px-1">
-                            <input
-                              name="adultos"
-                              type="number"
-                              className="input-pessoa text-center w-100"
-                              value={formData.adultos}
-                              onChange={(e) => handleInputChange(e)}
-                            />
-                          </div>
-                          {btnIncrementarPessoa('adultos')}
-                        </div>
-                      </div>
-
-                      <div className="col-xs-12 col-sm-4 px-3 text-center">
-                        <div className="row">
-                          <FormularioLabel
-                            label="Crianças"
-                            inputName="txtCriancas"
-                          />
-                        </div>
-                        <div className="row">
-                          {btnDecrementarPessoa('criancas')}
-                          <div className="col-6 px-1">
-                            <input
-                              name="criancas"
-                              type="number"
-                              className="input-pessoa text-center w-100"
-                              value={formData.criancas}
-                              onChange={(e) => handleInputChange(e)}
-                            />
-                          </div>
-                          {btnIncrementarPessoa('criancas')}
-                        </div>
-                      </div>
-
-                      <div className="col-xs-12 col-sm-4 px-3 text-center">
-                        <div className="row">
-                          <FormularioLabel
-                            label="Bebês"
-                            inputName="txtBebes"
-                          />
-                        </div>
-                        <div className="row">
-                          {btnDecrementarPessoa('bebes')}
-                          <div className="col-6 px-1">
-                            <input
-                              name="bebes"
-                              type="number"
-                              className="input-pessoa text-center w-100"
-                              value={formData.bebes}
-                              onChange={(e) => handleInputChange(e)}
-                            />
-                          </div>
-                          {btnIncrementarPessoa('bebes')}
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-
-                <div className="row mb-3">
-
-                  <div className="col-sm-12 col-md-4 px-3 text-center">
-                    <div className="row">
-                      <FormularioLabel
-                        label="Origem"
-                        inputName="origem"
-                      />
-                    </div>
-                    <div className="row px-2">
-                      <input
-                        name="origem"
-                        type="text"
-                        className="m-auto"
-                        value={formData.origem}
-                        onChange={(e) => handleInputChange(e)}
-                      />
-                    </div>
+                  <div className="col-sm-12 col-md-6 text-center">
+                    <input
+                      name="origem"
+                      type="text"
+                      placeholder="Origem"
+                      className="txt-airport m-auto w-100 my-1"
+                      value={formData.origem}
+                      onChange={(e) => handleInputChange(e)}
+                    />
                   </div>
 
-                  <div className="col-sm-12 col-md-4 text-center">
-                    <div className="row">
-                      <FormularioLabel
-                        label="Destino"
-                        inputName="destino"
-                      />
-                    </div>
-                    <div className="row px-2">
-                      <input
-                        name="destino"
-                        type="text"
-                        className="m-auto"
-                        value={formData.destino}
-                        onChange={(e) => handleInputChange(e)}
-                      />
-                    </div>
+                  <div className="col-sm-12 col-md-6 text-center">
+                    <input
+                      name="destino"
+                      type="text"
+                      placeholder="Destino"
+                      className="txt-airport m-auto w-100 my-1"
+                      value={formData.destino}
+                      onChange={(e) => handleInputChange(e)}
+                    />
                   </div>
 
-                  <div className="col-sm-12 col-md-4 text-center my-1">
-                    <button
-                      className="text-white rounded w-75"
-                      style={{ maxWidth: '200px' }}
-                      onClick={(e) => trocarRota(e)}
-                    >Inverter<br/>{'<>'}</button>
-                  </div>
+                  {btnTrocarRota}
 
                 </div>
 
@@ -276,64 +202,108 @@ const Encontre = () => {
                         name="soIda"
                         checked={formData.soIda}
                         onChange={(e) => handleInputChange(e)}
+                        className="m-auto"
                       />
                     </div>
                   </div>
 
-                  <div className="col-sm-12 col-md-5 px-3 text-center">
-                    <div className="row">
-                      <FormularioLabel
-                        label="Ida"
-                        inputName="ida"
-                      />
-                    </div>
-                    <div className="row px-2">
-                      <DatePicker
-                        name="ida"
-                        selected={formData.ida}
-                        dateFormat="dd/MM/yyyy"
-                        onChange={(e) => handleDataChange(e, 'ida')}
-                        minDate={now}
-                        className="w-100 text-center"
-                      />
-                    </div>
+                  <div className="col-sm-12 col-md-5 text-center">
+                    <DatePicker
+                      name="ida"
+                      placeholderText="Ida"
+                      selected={formData.ida}
+                      dateFormat="dd/MM/yyyy"
+                      onChange={(e) => handleDataChange(e, 'ida')}
+                      minDate={now}
+                      className="m-auto w-100 my-1 text-center d-block"
+                    />
                   </div>
 
                   {!formData.soIda &&
                   <div className="col-sm-12 col-md-5 text-center">
-                    <div className="row">
-                      <FormularioLabel
-                        label="Volta"
-                        inputName="volta"
-                      />
-                    </div>
-                    <div className="row px-2">
-                      <DatePicker
-                        name="volta"
-                        selected={formData.volta}
-                        dateFormat="dd/MM/yyyy"
-                        onChange={(e) => handleDataChange(e, 'volta')}
-                        minDate={now}
-                        className="w-100 text-center"
-                      />
-                    </div>
+                    <DatePicker
+                      name="volta"
+                      placeholderText="Volta"
+                      selected={formData.volta}
+                      dateFormat="dd/MM/yyyy"
+                      onChange={(e) => handleDataChange(e, 'volta')}
+                      minDate={now}
+                      className="m-auto w-100 my-1 text-center"
+                    />
                   </div>
                   }
 
                 </div>
 
                 <div className="row mb-3">
-
-                  <div className="col-12 px-3 text-center">
+                  <div className="col-xs-12 col-sm-4 px-3 my-1 text-center">
                     <div className="row">
-                      <button
-                        className="py-1 px-2 rounded"
-                        disabled={!formData.pronto}
-                      >Buscar passagens</button>
+                      {btnDecrementarPessoa('adultos')}
+                      <div className="col-6 px-1">
+                        <input
+                          name="adultos"
+                          type="number"
+                          className="text-center w-100"
+                          value={formData.adultos}
+                          onChange={(e) => handleInputChange(e)}
+                        />
+                      </div>
+                      {btnIncrementarPessoa('adultos')}
+                    </div>
+                    <div className="row">
+                      <FormularioLabel
+                        label="Adultos"
+                        inputName="txtAdultos"
+                      />
                     </div>
                   </div>
 
+                  <div className="col-xs-12 col-sm-4 px-3 my-1 text-center">
+                    <div className="row">
+                      {btnDecrementarPessoa('criancas')}
+                      <div className="col-6 px-1">
+                        <input
+                          name="criancas"
+                          type="number"
+                          className="text-center w-100"
+                          value={formData.criancas}
+                          onChange={(e) => handleInputChange(e)}
+                        />
+                      </div>
+                      {btnIncrementarPessoa('criancas')}
+                    </div>
+                    <div className="row">
+                      <FormularioLabel
+                        label="Crianças"
+                        inputName="txtCriancas"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-xs-12 col-sm-4 px-3 my-1 text-center">
+                    <div className="row">
+                      {btnDecrementarPessoa('bebes')}
+                      <div className="col-6 px-1">
+                        <input
+                          name="bebes"
+                          type="number"
+                          className="text-center w-100"
+                          value={formData.bebes}
+                          onChange={(e) => handleInputChange(e)}
+                        />
+                      </div>
+                      {btnIncrementarPessoa('bebes')}
+                    </div>
+                    <div className="row">
+                      <FormularioLabel
+                        label="Bebês"
+                        inputName="txtBebes"
+                      />
+                    </div>
+                  </div>
                 </div>
+
+                {btnBuscarPassagens}
 
               </div>
             </form>
