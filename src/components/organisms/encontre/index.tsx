@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Title from '../../atoms/title'
 import DatePicker from 'react-datepicker'
 import FormularioLabel from '../../atoms/formularioLabel'
@@ -6,29 +6,31 @@ import FormularioLabel from '../../atoms/formularioLabel'
 import 'react-datepicker/dist/react-datepicker.css'
 import PlaneSeparator from '../../molecules/planeSeparator'
 import { Collapsible } from '../../molecules/collabsible'
+import { whatsappUrl } from '../../../pages/index'
 
 const Encontre = () => {
   const urlWallpaper = 'assets/img/plane3.jpg'
   const now = new Date()
 
-  const [formData, setFormData] = useState({
-    pronto: false,
+  const initialData= {
     adultos: 1,
     criancas: 0,
     bebes: 0,
     origem: '',
     destino: '',
-    ida: undefined,
+    ida: now,
     volta: undefined,
     soIda: false
-  })
+  }
+
+  const [formReady, setFormReady] = useState(false)
+
+  const [formData, setFormData] = useState({...initialData})
 
   const estaPronto = () => {
-    if (formData.origem === '' || formData.destino === '') {
-      return false
-    } else {
-      return formData.soIda ? true : (formData.volta !== undefined)
-    }
+    (formData.origem === '' || formData.destino === '' || formData.ida === null || formData.ida === undefined)
+    ? setFormReady(false)
+    : (!formData.soIda && (formData.volta === null || formData.volta === undefined) ? setFormReady(false) : setFormReady(true)) 
   }
 
   const handleInputChange = (event) => {
@@ -36,15 +38,24 @@ const Encontre = () => {
     const value = target.type === 'checkbox' ? target.checked : target.value
     const name = target.name
 
-    setFormData({ ...formData, [name]: value, pronto: estaPronto() })
+    setFormData({
+      ...formData,
+      [name]: value
+    })
   }
 
   const handleDataChange = (event, trecho) => {
     if (trecho === 'ida') {
-      setFormData({ ...formData, ida: event })
+      setFormData({
+        ...formData,
+        ida: event
+      })
     }
     if (trecho === 'volta') {
-      setFormData({ ...formData, volta: event })
+      setFormData({
+        ...formData,
+        volta: event
+      })
     }
   }
 
@@ -116,6 +127,26 @@ const Encontre = () => {
     )
   }
 
+  let origem = `%0AOrigem: *${formData.origem}*`
+  let destino = `%0ADestino: *${formData.destino}*`
+  let ida = `%0AIda: *${formData.ida.toLocaleDateString('pt-Br')}*`
+  let volta = formData.soIda ? '' : `%0AVolta: *${formData.volta.toLocaleDateString('pt-Br')}*`
+  let adultos = `%0APassageiros: *${formData.adultos} adulto(s)*`
+  let criancas = formData.criancas > 0 ? `, *${formData.criancas} criança(s)*` : ''
+  let bebes = formData.bebes > 0 ? `, *${formData.bebes} criança(s)*` : ''
+
+  let mensagem = `Olá, EiMilhas!
+    %0AGostaria de solicitar propostas de passagens.
+    ${origem}
+    ${destino}
+    ${ida}
+    ${volta}
+    ${adultos}
+    ${criancas}
+    ${bebes}
+  `
+  let linkMensagem = `${whatsappUrl}&text=${mensagem}`
+
   const btnTrocarRota =
   (
     <button
@@ -128,12 +159,21 @@ const Encontre = () => {
   (
     <button
       className="btn-std py-1 px-2 rounded bg-red text-white w-100"
-      disabled={!formData.pronto}
+      id="btn-buscar-passagem"
+      disabled={!formReady}
+      onClick={
+        (e) => {
+          e.preventDefault()
+          window.open(linkMensagem, "_blank")
+        }
+      }
     >Buscar passagens</button>
   )
 
-  return (
+  useEffect(() => {console.log(formData)}, [formData])
 
+  return (
+  
     <div className="container my-5">
       <div className="row mx-0 bg-image form-passagem rounded-15 font-primary"
         style={{
@@ -160,6 +200,69 @@ const Encontre = () => {
             <form id="form-encontrar-passagem">
               <div className="container p-1">
 
+              <div className="row mb-3">
+
+                <div className="col-sm-12 col-md-2 text-center">
+                  <div className="row">
+                    <FormularioLabel
+                      label="Só ida?"
+                      inputName="cbSoIda"
+                    />
+                  </div>
+                  <div className="row m-auto" style={{ display: 'inherit' }}>
+                    <input
+                      type="checkbox"
+                      name="soIda"
+                      checked={formData.soIda}
+                      onChange={
+                        (e) => {
+                          handleInputChange(e)
+                          estaPronto()
+                        }
+                      }
+                      className="m-auto"
+                    />
+                  </div>
+                </div>
+
+                <div className="col-sm-12 col-md-5 text-center">
+                  <DatePicker
+                    name="ida"
+                    placeholderText="Ida"
+                    selected={formData.ida}
+                    dateFormat="dd/MM/yyyy"
+                    onChange={
+                      (e) => {
+                        handleDataChange(e, 'ida')
+                        estaPronto()
+                      }
+                    }
+                    minDate={now}
+                    className="m-auto w-100 my-1 text-center d-block"
+                  />
+                </div>
+
+                {!formData.soIda &&
+                <div className="col-sm-12 col-md-5 text-center">
+                  <DatePicker
+                    name="volta"
+                    placeholderText="Volta"
+                    selected={formData.volta}
+                    dateFormat="dd/MM/yyyy"
+                    onChange={
+                      (e) => {
+                        handleDataChange(e, 'volta')
+                        estaPronto()
+                      }
+                    }
+                    minDate={now}
+                    className="m-auto w-100 my-1 text-center"
+                  />
+                </div>
+                }
+
+                </div>
+
                 <div className="row mb-3 position-relative">
 
                   <div className="col-sm-12 col-md-6 text-center">
@@ -169,7 +272,12 @@ const Encontre = () => {
                       placeholder="Origem"
                       className="txt-airport m-auto w-100 my-1"
                       value={formData.origem}
-                      onChange={(e) => handleInputChange(e)}
+                      onChange={
+                        (e) => {
+                          handleInputChange(e)
+                          estaPronto()
+                        }
+                      }
                     />
                   </div>
 
@@ -180,59 +288,16 @@ const Encontre = () => {
                       placeholder="Destino"
                       className="txt-airport m-auto w-100 my-1"
                       value={formData.destino}
-                      onChange={(e) => handleInputChange(e)}
+                      onChange={
+                        (e) => {
+                          handleInputChange(e)
+                          estaPronto()
+                        }
+                      }
                     />
                   </div>
 
                   {btnTrocarRota}
-
-                </div>
-
-                <div className="row mb-3">
-
-                  <div className="col-sm-12 col-md-2 text-center">
-                    <div className="row">
-                      <FormularioLabel
-                        label="Só ida?"
-                        inputName="cbSoIda"
-                      />
-                    </div>
-                    <div className="row m-auto" style={{ display: 'inherit' }}>
-                      <input
-                        type="checkbox"
-                        name="soIda"
-                        checked={formData.soIda}
-                        onChange={(e) => handleInputChange(e)}
-                        className="m-auto"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="col-sm-12 col-md-5 text-center">
-                    <DatePicker
-                      name="ida"
-                      placeholderText="Ida"
-                      selected={formData.ida}
-                      dateFormat="dd/MM/yyyy"
-                      onChange={(e) => handleDataChange(e, 'ida')}
-                      minDate={now}
-                      className="m-auto w-100 my-1 text-center d-block"
-                    />
-                  </div>
-
-                  {!formData.soIda &&
-                  <div className="col-sm-12 col-md-5 text-center">
-                    <DatePicker
-                      name="volta"
-                      placeholderText="Volta"
-                      selected={formData.volta}
-                      dateFormat="dd/MM/yyyy"
-                      onChange={(e) => handleDataChange(e, 'volta')}
-                      minDate={now}
-                      className="m-auto w-100 my-1 text-center"
-                    />
-                  </div>
-                  }
 
                 </div>
 
@@ -248,7 +313,13 @@ const Encontre = () => {
                             type="number"
                             className="text-center w-100"
                             value={formData.adultos}
-                            onChange={(e) => handleInputChange(e)}
+                            onChange={
+                              (e) => {
+                                handleInputChange(e)
+                                estaPronto()
+                              }
+                            }
+                            disabled={true}
                           />
                         </div>
                         {btnIncrementarPessoa('adultos')}
@@ -270,7 +341,13 @@ const Encontre = () => {
                             type="number"
                             className="text-center w-100"
                             value={formData.criancas}
-                            onChange={(e) => handleInputChange(e)}
+                            onChange={
+                              (e) => {
+                                handleInputChange(e)
+                                estaPronto()
+                              }
+                            }
+                            disabled={true}
                           />
                         </div>
                         {btnIncrementarPessoa('criancas')}
@@ -292,7 +369,13 @@ const Encontre = () => {
                             type="number"
                             className="text-center w-100"
                             value={formData.bebes}
-                            onChange={(e) => handleInputChange(e)}
+                            onChange={
+                              (e) => {
+                                handleInputChange(e)
+                                estaPronto()
+                              }
+                            }
+                            disabled={true}
                           />
                         </div>
                         {btnIncrementarPessoa('bebes')}

@@ -14,6 +14,7 @@ const FooterOwners = () => {
           <a href="https://nextime.com.br">
             NeXTIME
           </a>
+          <div style={{display: 'none'}}>Desenvolvedor: <a href="https://github.com/marcuslamounier">Marcus Lamounier</a></div>
         </div>
       </div>
     </Container>
