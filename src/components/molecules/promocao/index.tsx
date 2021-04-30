@@ -4,7 +4,6 @@ import Preco from '../../atoms/preco'
 import Title from '../../atoms/title'
 import { whatsappUrl } from '../../../pages/index'
 
-
 type Props = {
     promocao: PromocaoProps
 }
@@ -44,9 +43,9 @@ const Promocao = ({
         </div>
         <div className="card-body">
           <div className="card-preco">
-            
+
             {promocao.localGenerico &&
-              <p className="fw-5 text-black my-0 text-uppercase" style={{textDecoration: 'overline'}}>{promocao.localGenerico}</p>
+              <p className="fw-5 text-black my-0 text-uppercase" style={{ textDecoration: 'overline' }}>{promocao.localGenerico}</p>
             }
             <span className="text-uppercase"><Title label={promocao.localEspecifico} color="primary"/></span>
             <p className="fw-5 text-black my-0">A partir de </p>

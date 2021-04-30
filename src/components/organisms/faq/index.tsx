@@ -9,21 +9,21 @@ type Props = {
 }
 
 const Faq = ({ questions }: Props) => {
-    return (
-        <div className="row p-2 mx-0 text-center">
-          <Title
-            label="Perguntas Frequentes"
-            color="black"
-          />
-          <PlaneSeparator
-            size={30}
-            color="primary"
-          />
-          <FrequentQuestions
-              questions={questions}
-          />
-        </div>
-    )
+  return (
+    <div className="row p-2 mx-0 text-center">
+      <Title
+        label="Perguntas Frequentes"
+        color="black"
+      />
+      <PlaneSeparator
+        size={30}
+        color="primary"
+      />
+      <FrequentQuestions
+        questions={questions}
+      />
+    </div>
+  )
 }
 
 export default Faq

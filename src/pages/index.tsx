@@ -139,7 +139,6 @@ const promocoes = [
   }
 ]
 
-
 const pathAvatars = 'assets/img/avatars'
 const depoimentos = [
   {
@@ -290,7 +289,7 @@ const frequentQuestions = [
                   <li><span className="fw-bold">Peso</span>(soma do animal e da bolsa): 7 kg / 15 lbs.</li>
                   <li><span className="fw-bold">A bolsa deve ter uma trava que garanta que o animal não saia durante o voo.</span></li>
                 </ul>
-                
+
               </div>
             </div>
           </div>
@@ -306,7 +305,7 @@ const frequentQuestions = [
                   <li><span className="fw-bold">Peso</span>(soma do animal e da bolsa): 7 kg / 15 lbs.</li>
                   <li><span className="fw-bold">Para a segurança do seu animal, a caixa deve ter uma porta de metal com trava dupla que impeça a introdução do focinho ou pernas na ranhura.</span></li>
                 </ul>
-                
+
               </div>
             </div>
           </div>

@@ -19,9 +19,9 @@ const Pessoa = ({
       />
       {profissao
         ? <>
-            <p className="mt-3 mb-0 text-orange text-center fw-bold font-primary">{nome}</p>
-            <p className="mt-0 text-white text-center font-primary">{profissao}</p>
-          </>
+          <p className="mt-3 mb-0 text-orange text-center fw-bold font-primary">{nome}</p>
+          <p className="mt-0 text-white text-center font-primary">{profissao}</p>
+        </>
         : <p className="mt-3 text-orange text-center fw-bold font-primary">{nome}</p>
       }
     </div>
