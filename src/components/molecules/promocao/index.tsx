@@ -2,8 +2,8 @@ import React from 'react'
 import { PromocaoProps } from '../../../types/types'
 import Preco from '../../atoms/preco'
 import Title from '../../atoms/title'
-
 import { whatsappUrl } from '../../../pages/index'
+
 
 type Props = {
     promocao: PromocaoProps
@@ -14,7 +14,7 @@ const Promocao = ({
 }: Props) => {
   const mensagem = `Olá, EiMilhas!
     %0AGostaria de solicitar propostas de passagens.
-    %0ADestino: *${promocao.pais}*`
+    %0ADestino: *${promocao.localEspecifico}*`
   const linkMensagem = `${whatsappUrl}&text=${mensagem}`
 
   return (
@@ -44,7 +44,11 @@ const Promocao = ({
         </div>
         <div className="card-body">
           <div className="card-preco">
-            <span className="text-uppercase"><Title label={promocao.pais} color="primary"/></span>
+            
+            {promocao.localGenerico &&
+              <p className="fw-5 text-black my-0 text-uppercase" style={{textDecoration: 'overline'}}>{promocao.localGenerico}</p>
+            }
+            <span className="text-uppercase"><Title label={promocao.localEspecifico} color="primary"/></span>
             <p className="fw-5 text-black my-0">A partir de </p>
             <Preco value={promocao.preco} color="black"/>
             <p className="fw-5 text-black my-0">{promocao.trecho}</p>

@@ -119,7 +119,7 @@ const Encontre = () => {
   const btnTrocarRota =
   (
     <button
-      className="btn-trocar my-1 bg-red text-white rounded-circle position-absolute"
+      className="btn-trocar btn-std my-1 bg-red text-white rounded-circle position-absolute"
       onClick={(e) => trocarRota(e)}
     >⇋</button>
   )
@@ -127,7 +127,7 @@ const Encontre = () => {
   const btnBuscarPassagens =
   (
     <button
-      className="py-1 px-2 rounded bg-red text-white w-100"
+      className="btn-std py-1 px-2 rounded bg-red text-white w-100"
       disabled={!formData.pronto}
     >Buscar passagens</button>
   )

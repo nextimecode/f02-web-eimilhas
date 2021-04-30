@@ -1,3 +1,5 @@
+import { ReactElement } from "react";
+
 export interface NavLinkProps {
     href: string
     label: string
@@ -10,9 +12,9 @@ export interface NavItemsProps {
 }
 
 export interface DepoimentoProps {
-    foto: string
+    foto?: string
     nome: string
-    profissao: string
+    profissao?: string
     texto: string
 }
 
@@ -25,14 +27,20 @@ export interface CardProps {
 
 export interface PromocaoProps {
     foto: string
-    bandeira: string
-    pais: string
+    bandeira?: string
+    localEspecifico: string
+    localGenerico?: string
     artigo: string
     preco: number
-    trecho: string
+    trecho?: string
 }
 
 export interface DescricaoFormaPagamentoProps {
     descricao: string
     enfase: string
+}
+
+export interface QuestionProps {
+    label: string
+    answer: ReactElement
 }
