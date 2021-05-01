@@ -2,17 +2,19 @@ import React, { useEffect, useState } from 'react'
 import Title from '../../atoms/title'
 import DatePicker from 'react-datepicker'
 import FormularioLabel from '../../atoms/formularioLabel'
-
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
 import 'react-datepicker/dist/react-datepicker.css'
 import PlaneSeparator from '../../molecules/planeSeparator'
 import { Collapsible } from '../../molecules/collabsible'
 import { whatsappUrl } from '../../../pages/index'
+import { airports } from './airports'
 
 const Encontre = () => {
   const urlWallpaper = 'assets/img/plane3.jpg'
   const now = new Date()
 
-  const initialData= {
+  const initialData = {
     adultos: 1,
     criancas: 0,
     bebes: 0,
@@ -25,12 +27,12 @@ const Encontre = () => {
 
   const [formReady, setFormReady] = useState(false)
 
-  const [formData, setFormData] = useState({...initialData})
+  const [formData, setFormData] = useState({ ...initialData })
 
   const estaPronto = () => {
     (formData.origem === '' || formData.destino === '' || formData.ida === null || formData.ida === undefined)
-    ? setFormReady(false)
-    : (!formData.soIda && (formData.volta === null || formData.volta === undefined) ? setFormReady(false) : setFormReady(true)) 
+      ? setFormReady(false)
+      : (!formData.soIda && (formData.volta === null || formData.volta === undefined) ? setFormReady(false) : setFormReady(true))
   }
 
   const handleInputChange = (event) => {
@@ -127,26 +129,6 @@ const Encontre = () => {
     )
   }
 
-  let origem = `%0AOrigem: *${formData.origem}*`
-  let destino = `%0ADestino: *${formData.destino}*`
-  let ida = `%0AIda: *${formData.ida.toLocaleDateString('pt-Br')}*`
-  let volta = formData.soIda ? '' : `%0AVolta: *${formData.volta.toLocaleDateString('pt-Br')}*`
-  let adultos = `%0APassageiros: *${formData.adultos} adulto(s)*`
-  let criancas = formData.criancas > 0 ? `, *${formData.criancas} criança(s)*` : ''
-  let bebes = formData.bebes > 0 ? `, *${formData.bebes} criança(s)*` : ''
-
-  let mensagem = `Olá, EiMilhas!
-    %0AGostaria de solicitar propostas de passagens.
-    ${origem}
-    ${destino}
-    ${ida}
-    ${volta}
-    ${adultos}
-    ${criancas}
-    ${bebes}
-  `
-  let linkMensagem = `${whatsappUrl}&text=${mensagem}`
-
   const btnTrocarRota =
   (
     <button
@@ -164,16 +146,26 @@ const Encontre = () => {
       onClick={
         (e) => {
           e.preventDefault()
-          window.open(linkMensagem, "_blank")
+          const origem = `%0AOrigem: *${formData.origem}*`
+          const destino = `%0ADestino: *${formData.destino}*`
+          const ida = `%0AIda: *${formData.ida.toLocaleDateString('pt-Br')}*`
+          const volta = formData.soIda ? '' : `%0AVolta: *${formData.volta.toLocaleDateString('pt-Br')}*`
+          const adultos = `%0APassageiros: *${formData.adultos} adulto(s)*`
+          const criancas = formData.criancas > 0 ? `, *${formData.criancas} criança(s)*` : ''
+          const bebes = formData.bebes > 0 ? `, *${formData.bebes} criança(s)*` : ''
+        
+          const mensagem = `Olá, EiMilhas!%0AGostaria de solicitar propostas de passagens.${origem}${destino}${ida}${volta}${adultos}${criancas}${bebes}`
+          const linkMensagem = `${whatsappUrl}&text=${mensagem}`
+          window.open(linkMensagem, '_blank')
         }
       }
     >Buscar passagens</button>
   )
 
-  useEffect(() => {console.log(formData)}, [formData])
+  useEffect(() => { console.log(formData) }, [formData])
 
   return (
-  
+
     <div className="container my-5">
       <div className="row mx-0 bg-image form-passagem rounded-15 font-primary"
         style={{
@@ -200,73 +192,104 @@ const Encontre = () => {
             <form id="form-encontrar-passagem">
               <div className="container p-1">
 
-              <div className="row mb-3">
+                <div className="row mb-3">
 
-                <div className="col-sm-12 col-md-2 text-center">
-                  <div className="row">
-                    <FormularioLabel
-                      label="Só ida?"
-                      inputName="cbSoIda"
-                    />
+                  <div className="col-sm-12 col-md-2 text-center">
+                    <div className="row">
+                      <FormularioLabel
+                        label="Só ida?"
+                        inputName="cbSoIda"
+                      />
+                    </div>
+                    <div className="row m-auto" style={{ display: 'inherit' }}>
+                      <input
+                        type="checkbox"
+                        name="soIda"
+                        checked={formData.soIda}
+                        onChange={
+                          (e) => {
+                            handleInputChange(e)
+                            estaPronto()
+                          }
+                        }
+                        className="m-auto"
+                      />
+                    </div>
                   </div>
-                  <div className="row m-auto" style={{ display: 'inherit' }}>
-                    <input
-                      type="checkbox"
-                      name="soIda"
-                      checked={formData.soIda}
+
+                  <div className="col-sm-12 col-md-5 text-center">
+                    <DatePicker
+                      name="ida"
+                      placeholderText="Ida"
+                      selected={formData.ida}
+                      dateFormat="dd/MM/yyyy"
                       onChange={
                         (e) => {
-                          handleInputChange(e)
+                          handleDataChange(e, 'ida')
                           estaPronto()
                         }
                       }
-                      className="m-auto"
+                      minDate={now}
+                      className="m-auto w-100 my-1 text-center d-block"
                     />
                   </div>
-                </div>
 
-                <div className="col-sm-12 col-md-5 text-center">
-                  <DatePicker
-                    name="ida"
-                    placeholderText="Ida"
-                    selected={formData.ida}
-                    dateFormat="dd/MM/yyyy"
-                    onChange={
-                      (e) => {
-                        handleDataChange(e, 'ida')
-                        estaPronto()
-                      }
-                    }
-                    minDate={now}
-                    className="m-auto w-100 my-1 text-center d-block"
-                  />
-                </div>
-
-                {!formData.soIda &&
-                <div className="col-sm-12 col-md-5 text-center">
-                  <DatePicker
-                    name="volta"
-                    placeholderText="Volta"
-                    selected={formData.volta}
-                    dateFormat="dd/MM/yyyy"
-                    onChange={
-                      (e) => {
-                        handleDataChange(e, 'volta')
-                        estaPronto()
-                      }
-                    }
-                    minDate={now}
-                    className="m-auto w-100 my-1 text-center"
-                  />
-                </div>
-                }
+                  {!formData.soIda &&
+                    <div className="col-sm-12 col-md-5 text-center">
+                      <DatePicker
+                        name="volta"
+                        placeholderText="Volta"
+                        selected={formData.volta}
+                        dateFormat="dd/MM/yyyy"
+                        onChange={
+                          (e) => {
+                            handleDataChange(e, 'volta')
+                            estaPronto()
+                          }
+                        }
+                        minDate={now}
+                        className="m-auto w-100 my-1 text-center"
+                      />
+                    </div>
+                  }
 
                 </div>
+
 
                 <div className="row mb-3 position-relative">
 
                   <div className="col-sm-12 col-md-6 text-center">
-                    <input
+                    <Autocomplete id="busca-origem"
+                      freeSolo
+                      disableClearable
+                      options={airports.map((a) => `(${a.IATA}) ${a.city}, ${a.country}`)}
+                      renderInput={(params) => (
+                        <TextField
+                          {...params}
+                          InputProps={{
+                              ...params.InputProps,
+                              type: 'text',
+                              name: "origem",
+                              value: formData.origem,
+                              placeholder: "Origem"
+                          }}
+                          className="m-auto w-100 my-1"
+                          onChange={
+                              (e) => {
+                                  handleInputChange(e)
+                                  estaPronto()
+                              }
+                          }
+                          onSelect={
+                            (e) => {
+                                handleInputChange(e)
+                                estaPronto()
+                            }
+                        }
+                        />
+                      )}
+                    />
+                    {/* <input
                       name="origem"
                       type="text"
                       placeholder="Origem"
@@ -278,11 +301,41 @@ const Encontre = () => {
                           estaPronto()
                         }
                       }
-                    />
+                    />*/}
                   </div>
 
                   <div className="col-sm-12 col-md-6 text-center">
-                    <input
+                  <Autocomplete id="busca-destino"
+                      freeSolo
+                      disableClearable
+                      options={airports.map((a) => `(${a.IATA}) ${a.city}, ${a.country}`)}
+                      renderInput={(params) => (
+                        <TextField
+                          {...params}
+                          InputProps={{
+                              ...params.InputProps,
+                              type: 'text',
+                              name: "destino",
+                              value: formData.destino,
+                              placeholder: "Destino"
+                          }}
+                          className="m-auto w-100 my-1"
+                          onChange={
+                              (e) => {
+                                  handleInputChange(e)
+                                  estaPronto()
+                              }
+                          }
+                          onSelect={
+                            (e) => {
+                                handleInputChange(e)
+                                estaPronto()
+                            }
+                        }
+                        />
+                      )}
+                    />
+                    {/* <input
                       name="destino"
                       type="text"
                       placeholder="Destino"
@@ -294,7 +347,7 @@ const Encontre = () => {
                           estaPronto()
                         }
                       }
-                    />
+                    /> */}
                   </div>
 
                   {btnTrocarRota}

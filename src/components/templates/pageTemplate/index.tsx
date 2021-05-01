@@ -45,6 +45,7 @@ const PageTemplate = ({
           />
         </footer>
       </div>
+      <script src="https://cdn.jsdelivr.net/npm/airport-autocomplete-js@latest/dist/index.browser.min.js"></script>
     </>
   )
 }

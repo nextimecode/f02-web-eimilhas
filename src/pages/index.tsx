@@ -12,6 +12,7 @@ export const whatsappUrl = 'https://api.whatsapp.com/send?phone=5537991222087' /
 // export const whatsappUrl = 'https://api.whatsapp.com/send?phone=5531991464894'
 export const instagramUrl = 'https://www.instagram.com/eimilhas/'
 
+
 const listNavLinks = [
   {
     navLink: {

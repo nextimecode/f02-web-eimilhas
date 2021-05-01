@@ -186,13 +186,23 @@ input[type=number]::-webkit-outer-spin-button {
 
 .form-passagem {
 
-    input[type=text], input[type=number] {
+    .MuiInputBase-input {
+        padding: 0 !important;
+        padding-left: 30px !important;
+    }
+    .MuiInput-underline:before {
+        border: none;
+    }
+
+    input[type=text], input[type=number], input[type=search]{
         height: 45px;
         border-radius: 4px;
         color: $black;
+        background-color: $white;
+        font-family: $font-01;
     }
 
-    input[type=text], input[type=number], .btn-increment {
+    input[type=text], input[type=number], input[type=search], .btn-increment {
         border: 1px solid $gray-700;
         font-size: 16px;
     }
