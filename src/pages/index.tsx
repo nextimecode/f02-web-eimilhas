@@ -160,7 +160,7 @@ const depoimentos = [
     depoimento: {
       foto: `${pathAvatars}/bruno.jpg`,
       nome: 'Bruno',
-      profissao: 'Vendedor',
+      profissao: 'Gestão Comercial',
       texto: 'Excelente experiência, já viajei 6 vezes pela EiMilhas, sempre bem assessorado e nenhum problema a relatar, fora o preço que é um dos melhores do mercado, ou seja, só coisas boas! Indico demais.'
     }
   },

@@ -408,6 +408,7 @@ const Encontre = () => {
                   <div className="col">
                     {btnBuscarPassagens}
                   </div>
+
                 </div>
 
               </div>
