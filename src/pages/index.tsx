@@ -8,10 +8,8 @@ import Promocoes from '../components/organisms/promocoes'
 import PageTemplate from '../components/templates/pageTemplate'
 import Section from '../components/templates/section'
 
-export const whatsappUrl = 'https://api.whatsapp.com/send?phone=5537991222087' // whatsapp de teste
-// export const whatsappUrl = 'https://api.whatsapp.com/send?phone=5531991464894'
+export const whatsappUrl = 'https://api.whatsapp.com/send?phone=5531991464894'
 export const instagramUrl = 'https://www.instagram.com/eimilhas/'
-
 
 const listNavLinks = [
   {
@@ -152,21 +150,21 @@ const depoimentos = [
   },
   {
     depoimento: {
-      foto: `${pathAvatars}/artur.png`,
+      foto: `${pathAvatars}/artur.jpg`,
       nome: 'Artur',
-      texto: 'Viajo frequentemente para o exterior, e só compro passagens com o Diego (EiMilhas). Com ele, ganho flexibilidade e comodidade: todo processo de compra e problemas com a passagem ele resolve! Além de ser super barato! Já indiquei para toda minha família, e todos compram pelo Diego (EiMilhas). Recomendo fortemente!'
+      texto: 'Viajo frequentemente para o exterior e só compro passagens com o EiMilhas. Ganho flexibilidade e comodidade: todo processo de compra e problemas com a passagem ele resolve! Além de ser super barato! Já indiquei para toda minha família, e todos compram pelo EiMilhas. Recomendo fortemente!'
     }
   },
   {
     depoimento: {
-      foto: `${pathAvatars}/bruno.png`,
+      foto: `${pathAvatars}/bruno.jpg`,
       nome: 'Bruno',
       texto: 'Excelente experiência, já viajei 6 vezes pela EiMilhas, sempre bem assessorado e nenhum problema a relatar, fora o preço que é um dos melhores do mercado, ou seja, só coisas boas! Indico demais.'
     }
   },
   {
     depoimento: {
-      foto: `${pathAvatars}/clah_campos.png`,
+      foto: `${pathAvatars}/clah_campos.jpg`,
       nome: 'Clah Campos',
       texto: 'Amei a experiência com a EiMilhas , preço excelente, atendimento rápido e mto atencioso, indico pra todo mundo!'
     }

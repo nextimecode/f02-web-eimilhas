@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import Title from '../../atoms/title'
 import DatePicker from 'react-datepicker'
 import FormularioLabel from '../../atoms/formularioLabel'
-import TextField from '@material-ui/core/TextField';
-import Autocomplete from '@material-ui/lab/Autocomplete';
-import 'react-datepicker/dist/react-datepicker.css'
+import TextField from '@material-ui/core/TextField'
+import Autocomplete from '@material-ui/lab/Autocomplete'
 import PlaneSeparator from '../../molecules/planeSeparator'
 import { Collapsible } from '../../molecules/collabsible'
 import { whatsappUrl } from '../../../pages/index'
 import { airports } from './airports'
+import 'react-datepicker/dist/react-datepicker.css'
 
 const Encontre = () => {
   const urlWallpaper = 'assets/img/plane3.jpg'
@@ -104,7 +104,11 @@ const Encontre = () => {
   const trocarRota = (event) => {
     event.preventDefault()
     const aux = formData.origem
-    setFormData({ ...formData, origem: formData.destino, destino: aux })
+    setFormData({
+      ...formData,
+      origem: formData.destino,
+      destino: aux
+    })
   }
 
   const btnDecrementarPessoa = (tipo) => {
@@ -129,13 +133,13 @@ const Encontre = () => {
     )
   }
 
-  const btnTrocarRota =
-  (
-    <button
-      className="btn-trocar btn-std my-1 bg-red text-white rounded-circle position-absolute"
-      onClick={(e) => trocarRota(e)}
-    >⇋</button>
-  )
+  // const btnTrocarRota =
+  // (
+  //   <button
+  //     className="btn-trocar btn-std my-1 bg-red text-white rounded-circle position-absolute"
+  //     onClick={(e) => trocarRota(e)}
+  //   >⇋</button>
+  // )
 
   const btnBuscarPassagens =
   (
@@ -153,7 +157,7 @@ const Encontre = () => {
           const adultos = `%0APassageiros: *${formData.adultos} adulto(s)*`
           const criancas = formData.criancas > 0 ? `, *${formData.criancas} criança(s)*` : ''
           const bebes = formData.bebes > 0 ? `, *${formData.bebes} criança(s)*` : ''
-        
+
           const mensagem = `Olá, EiMilhas!%0AGostaria de solicitar propostas de passagens.${origem}${destino}${ida}${volta}${adultos}${criancas}${bebes}`
           const linkMensagem = `${whatsappUrl}&text=${mensagem}`
           window.open(linkMensagem, '_blank')
@@ -255,7 +259,6 @@ const Encontre = () => {
 
                 </div>
 
-
                 <div className="row mb-3 position-relative">
 
                   <div className="col-sm-12 col-md-6 text-center">
@@ -266,91 +269,49 @@ const Encontre = () => {
                       renderInput={(params) => (
                         <TextField
                           {...params}
-                          InputProps={{
-                              ...params.InputProps,
-                              type: 'text',
-                              name: "origem",
-                              value: formData.origem,
-                              placeholder: "Origem"
-                          }}
+                          InputProps={{ ...params.InputProps }}
+                          type="text"
+                          name="origem"
+                          placeholder="Origem"
+                          value={formData.origem}
                           className="m-auto w-100 my-1"
-                          onChange={
-                              (e) => {
-                                  handleInputChange(e)
-                                  estaPronto()
-                              }
-                          }
                           onSelect={
                             (e) => {
-                                handleInputChange(e)
-                                estaPronto()
+                              handleInputChange(e)
+                              estaPronto()
                             }
-                        }
+                          }
                         />
                       )}
                     />
-                    {/* <input
-                      name="origem"
-                      type="text"
-                      placeholder="Origem"
-                      className="txt-airport m-auto w-100 my-1"
-                      value={formData.origem}
-                      onChange={
-                        (e) => {
-                          handleInputChange(e)
-                          estaPronto()
-                        }
-                      }
-                    />*/}
                   </div>
 
                   <div className="col-sm-12 col-md-6 text-center">
-                  <Autocomplete id="busca-destino"
+                    <Autocomplete id="busca-destino"
                       freeSolo
                       disableClearable
                       options={airports.map((a) => `(${a.IATA}) ${a.city}, ${a.country}`)}
                       renderInput={(params) => (
                         <TextField
                           {...params}
-                          InputProps={{
-                              ...params.InputProps,
-                              type: 'text',
-                              name: "destino",
-                              value: formData.destino,
-                              placeholder: "Destino"
-                          }}
+                          InputProps={{ ...params.InputProps }}
+                          type="text"
+                          name="destino"
+                          placeholder="Destino"
                           className="m-auto w-100 my-1"
-                          onChange={
-                              (e) => {
-                                  handleInputChange(e)
-                                  estaPronto()
-                              }
-                          }
+                          value={formData.destino}
                           onSelect={
                             (e) => {
-                                handleInputChange(e)
-                                estaPronto()
+                              handleInputChange(e)
+                              estaPronto()
                             }
-                        }
+                          }
                         />
                       )}
                     />
-                    {/* <input
-                      name="destino"
-                      type="text"
-                      placeholder="Destino"
-                      className="txt-airport m-auto w-100 my-1"
-                      value={formData.destino}
-                      onChange={
-                        (e) => {
-                          handleInputChange(e)
-                          estaPronto()
-                        }
-                      }
-                    /> */}
                   </div>
 
-                  {btnTrocarRota}
+                  {/* {btnTrocarRota} */}
 
                 </div>
 

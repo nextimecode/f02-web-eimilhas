@@ -11,9 +11,7 @@ type Props = {
 const Promocao = ({
   promocao
 }: Props) => {
-  const mensagem = `Olá, EiMilhas!
-    %0AGostaria de solicitar propostas de passagens.
-    %0ADestino: *${promocao.localEspecifico}*`
+  const mensagem = `Olá, EiMilhas!%0AGostaria de solicitar propostas de passagens.%0ADestino: *${promocao.localEspecifico}*`
   const linkMensagem = `${whatsappUrl}&text=${mensagem}`
 
   return (
