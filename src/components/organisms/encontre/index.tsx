@@ -101,15 +101,15 @@ const Encontre = () => {
     }
   }
 
-  const trocarRota = (event) => {
-    event.preventDefault()
-    const aux = formData.origem
-    setFormData({
-      ...formData,
-      origem: formData.destino,
-      destino: aux
-    })
-  }
+  // const trocarRota = (event) => {
+  //   event.preventDefault()
+  //   const aux = formData.origem
+  //   setFormData({
+  //     ...formData,
+  //     origem: formData.destino,
+  //     destino: aux
+  //   })
+  // }
 
   const btnDecrementarPessoa = (tipo) => {
     return (
@@ -166,7 +166,7 @@ const Encontre = () => {
     >Buscar passagens</button>
   )
 
-  useEffect(() => { console.log(formData) }, [formData])
+  useEffect(() => { setFormData(formData) }, [formData])
 
   return (
 
