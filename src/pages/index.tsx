@@ -152,6 +152,7 @@ const depoimentos = [
     depoimento: {
       foto: `${pathAvatars}/artur.jpg`,
       nome: 'Artur',
+      profissao: 'Engenheiro Eletricista',
       texto: 'Viajo frequentemente para o exterior e só compro passagens com o EiMilhas. Ganho flexibilidade e comodidade: todo processo de compra e problemas com a passagem ele resolve! Além de ser super barato! Já indiquei para toda minha família, e todos compram pelo EiMilhas. Recomendo fortemente!'
     }
   },
@@ -159,6 +160,7 @@ const depoimentos = [
     depoimento: {
       foto: `${pathAvatars}/bruno.jpg`,
       nome: 'Bruno',
+      profissao: 'Vendedor',
       texto: 'Excelente experiência, já viajei 6 vezes pela EiMilhas, sempre bem assessorado e nenhum problema a relatar, fora o preço que é um dos melhores do mercado, ou seja, só coisas boas! Indico demais.'
     }
   },
@@ -166,6 +168,7 @@ const depoimentos = [
     depoimento: {
       foto: `${pathAvatars}/clah_campos.jpg`,
       nome: 'Clah Campos',
+      profissao: 'Digital Influencer',
       texto: 'Amei a experiência com a EiMilhas , preço excelente, atendimento rápido e mto atencioso, indico pra todo mundo!'
     }
   }
