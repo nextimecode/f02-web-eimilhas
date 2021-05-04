@@ -71,6 +71,16 @@ a:hover {
     color: $orange;
 }
 
+a:link svg {
+    transition: .3s;
+    fill: $white;
+}
+
+a:hover svg {
+    transition: .3s;
+    fill: $blue;
+}
+
 .arrow-down {
     width: 0;
     height: 0;
@@ -146,11 +156,15 @@ a:hover {
     }
 }
 
-.qrcode {
-    min-width: 110px;
-    width: 40%;
-    max-width: 200px;
+.contato {
+    height: 4.5em;
     border-radius: 20px;
+    background-color: $white;
+}
+
+.contato:hover {
+    background-color: $red;
+    transition: .5s;
 }
 
 .react-multiple-carousel__arrow--left::before {

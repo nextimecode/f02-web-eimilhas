@@ -290,7 +290,7 @@ const Encontre = () => {
                     <Autocomplete id="busca-destino"
                       freeSolo
                       disableClearable
-                      options={airports.map((a) => `(${a.IATA}) ${a.city}, ${a.country}`)}
+                      options={airports.map((a) => `${a.city} (${a.IATA}), ${a.country}`)}
                       renderInput={(params) => (
                         <TextField
                           {...params}
