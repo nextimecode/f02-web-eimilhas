@@ -173,6 +173,14 @@ const depoimentos = [
       profissao: 'Digital Influencer',
       texto: 'Amei a experiência com a EiMilhas , preço excelente, atendimento rápido e mto atencioso, indico pra todo mundo!'
     }
+  },
+  {
+    depoimento: {
+      foto: `${pathAvatars}/day.png`,
+      nome: 'Dayanne Melgaço',
+      profissao: 'Marketing',
+      texto: 'Os preços são ótimos e o atendimento do Diego é excelente. Ele me deu todo suporte e garantia da compra, mesmo realizando-as no meio de uma pandemia. Me senti segura, garantida e ainda economizei bastante comprando com a EiMilhas.'
+    }
   }
 ]
 
