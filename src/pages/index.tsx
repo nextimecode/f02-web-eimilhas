@@ -90,6 +90,46 @@ const pathLugares = 'assets/img/lugares/fotos'
 const promocoes = [
   {
     promocao: {
+      foto: `${pathLugares}/espanha.jpeg`,
+      localEspecifico: 'Espanha',
+      localGenerico: 'Europa',
+      artigo: 'a',
+      preco: 2300,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/portugal.jpeg`,
+      localEspecifico: 'Portugal',
+      localGenerico: 'Europa',
+      artigo: 'a',
+      preco: 2300,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/belgica.jpeg`,
+      localEspecifico: 'Bélgica',
+      localGenerico: 'Europa',
+      artigo: 'a',
+      preco: 2500,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/holanda.jpeg`,
+      localEspecifico: 'Holanda',
+      localGenerico: 'Europa',
+      artigo: 'a',
+      preco: 2500,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
       foto: `${pathLugares}/paris.jpg`,
       localEspecifico: 'França',
       localGenerico: 'Europa',
@@ -101,9 +141,9 @@ const promocoes = [
   {
     promocao: {
       foto: `${pathLugares}/ny.jpg`,
-      localEspecifico: 'Nova York',
-      localGenerico: 'EUA',
-      artigo: '',
+      localEspecifico: 'Estados Unidos',
+      localGenerico: 'AMERICA DO NORTE',
+      artigo: 'a',
       preco: 2000,
       trecho: 'ida e volta'
     }
@@ -172,6 +212,14 @@ const depoimentos = [
       nome: 'Clah Campos',
       profissao: 'Digital Influencer',
       texto: 'Amei a experiência com a EiMilhas , preço excelente, atendimento rápido e mto atencioso, indico pra todo mundo!'
+    }
+  },
+  {
+    depoimento: {
+      foto: `${pathAvatars}/day.png`,
+      nome: 'Dayanne Melgaço',
+      profissao: 'Marketing',
+      texto: 'Os preços são ótimos e o atendimento do Diego é excelente. Ele me deu todo suporte e garantia da compra, mesmo realizando-as no meio de uma pandemia. Me senti segura, garantida e ainda economizei bastante comprando com a EiMilhas.'
     }
   }
 ]
