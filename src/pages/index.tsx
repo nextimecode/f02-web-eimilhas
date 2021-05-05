@@ -90,6 +90,46 @@ const pathLugares = 'assets/img/lugares/fotos'
 const promocoes = [
   {
     promocao: {
+      foto: `${pathLugares}/espanha.jpeg`,
+      localEspecifico: 'Espanha',
+      localGenerico: 'Europa',
+      artigo: 'a',
+      preco: 2300,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/portugal.jpeg`,
+      localEspecifico: 'Portugal',
+      localGenerico: 'Europa',
+      artigo: 'a',
+      preco: 2300,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/belgica.jpeg`,
+      localEspecifico: 'Bélgica',
+      localGenerico: 'Europa',
+      artigo: 'a',
+      preco: 2500,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/holanda.jpeg`,
+      localEspecifico: 'Holanda',
+      localGenerico: 'Europa',
+      artigo: 'a',
+      preco: 2500,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
       foto: `${pathLugares}/paris.jpg`,
       localEspecifico: 'França',
       localGenerico: 'Europa',
@@ -101,9 +141,9 @@ const promocoes = [
   {
     promocao: {
       foto: `${pathLugares}/ny.jpg`,
-      localEspecifico: 'Nova York',
-      localGenerico: 'EUA',
-      artigo: '',
+      localEspecifico: 'Estados Unidos',
+      localGenerico: 'AMERICA DO NORTE',
+      artigo: 'a',
       preco: 2000,
       trecho: 'ida e volta'
     }
