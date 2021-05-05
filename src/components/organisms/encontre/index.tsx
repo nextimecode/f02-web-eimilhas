@@ -1,16 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Title from '../../atoms/title'
 import DatePicker from 'react-datepicker'
 import FormularioLabel from '../../atoms/formularioLabel'
-
+import TextField from '@material-ui/core/TextField'
+import Autocomplete from '@material-ui/lab/Autocomplete'
+import PlaneSeparator from '../../molecules/planeSeparator'
+import { Collapsible } from '../../molecules/collabsible'
+import { whatsappUrl } from '../../../pages/index'
+import { airports } from './airports'
 import 'react-datepicker/dist/react-datepicker.css'
 
 const Encontre = () => {
   const urlWallpaper = 'assets/img/plane3.jpg'
   const now = new Date()
 
-  const [formData, setFormData] = useState({
-    pronto: false,
+  const initialData = {
     adultos: 1,
     criancas: 0,
     bebes: 0,
@@ -19,32 +23,41 @@ const Encontre = () => {
     ida: now,
     volta: undefined,
     soIda: false
-  })
+  }
+
+  const [formReady, setFormReady] = useState(false)
+
+  const [formData, setFormData] = useState({ ...initialData })
 
   const estaPronto = () => {
-    event.preventDefault()
-    if (formData.origem === '' || formData.destino === '') {
-      return false
-    } else {
-      return formData.soIda ? true : (formData.volta !== undefined)
-    }
+    (formData.origem === '' || formData.destino === '' || formData.ida === null || formData.ida === undefined)
+      ? setFormReady(false)
+      : (!formData.soIda && (formData.volta === null || formData.volta === undefined) ? setFormReady(false) : setFormReady(true))
   }
 
   const handleInputChange = (event) => {
-    event.preventDefault()
     const target = event.target
     const value = target.type === 'checkbox' ? target.checked : target.value
     const name = target.name
 
-    setFormData({ ...formData, [name]: value, pronto: estaPronto() })
+    setFormData({
+      ...formData,
+      [name]: value
+    })
   }
 
   const handleDataChange = (event, trecho) => {
     if (trecho === 'ida') {
-      setFormData({ ...formData, ida: event })
+      setFormData({
+        ...formData,
+        ida: event
+      })
     }
     if (trecho === 'volta') {
-      setFormData({ ...formData, volta: event })
+      setFormData({
+        ...formData,
+        volta: event
+      })
     }
   }
 
@@ -88,178 +101,100 @@ const Encontre = () => {
     }
   }
 
-  const trocarRota = (event) => {
-    event.preventDefault()
-    const aux = formData.origem
-    setFormData({ ...formData, origem: formData.destino, destino: aux })
-  }
+  // const trocarRota = (event) => {
+  //   event.preventDefault()
+  //   const aux = formData.origem
+  //   setFormData({
+  //     ...formData,
+  //     origem: formData.destino,
+  //     destino: aux
+  //   })
+  // }
 
   const btnDecrementarPessoa = (tipo) => {
     return (
-      <div className="col-3 px-0">
+      <div className="col-3 px-0 m-auto">
         <button
-          className="btn-increment rounded py-0 px-2"
+          className="btn-increment rounded-circle"
           onClick={(e) => decrementarPessoa(e, tipo)}
-        >-</button>
+        >−</button>
       </div>
     )
   }
 
   const btnIncrementarPessoa = (tipo) => {
     return (
-      <div className="col-3 px-0">
+      <div className="col-3 px-0 m-auto">
         <button
-          className="btn-increment rounded py-0 px-2"
+          className="btn-increment rounded-circle"
           onClick={(e) => incrementarPessoa(e, tipo)}
-        >+</button>
+        >✚</button>
       </div>
     )
   }
 
+  // const btnTrocarRota =
+  // (
+  //   <button
+  //     className="btn-trocar btn-std my-1 bg-red text-white rounded-circle position-absolute"
+  //     onClick={(e) => trocarRota(e)}
+  //   >⇋</button>
+  // )
+
+  const btnBuscarPassagens =
+  (
+    <button
+      className="btn-std py-1 px-2 rounded bg-red text-white w-100"
+      id="btn-buscar-passagem"
+      disabled={!formReady}
+      onClick={
+        (e) => {
+          e.preventDefault()
+          const origem = `%0AOrigem: *${formData.origem}*`
+          const destino = `%0ADestino: *${formData.destino}*`
+          const ida = `%0AIda: *${formData.ida.toLocaleDateString('pt-Br')}*`
+          const volta = formData.soIda ? '' : `%0AVolta: *${formData.volta.toLocaleDateString('pt-Br')}*`
+          const adultos = `%0APassageiros: *${formData.adultos} adulto(s)*`
+          const criancas = formData.criancas > 0 ? `, *${formData.criancas} criança(s)*` : ''
+          const bebes = formData.bebes > 0 ? `, *${formData.bebes} criança(s)*` : ''
+
+          const mensagem = `Olá, EiMilhas!%0AGostaria de solicitar propostas de passagens.${origem}${destino}${ida}${volta}${adultos}${criancas}${bebes}`
+          const linkMensagem = `${whatsappUrl}&text=${mensagem}`
+          window.open(linkMensagem, '_blank')
+        }
+      }
+    >Buscar passagens</button>
+  )
+
+  useEffect(() => { setFormData(formData) }, [formData])
+
   return (
 
     <div className="container my-5">
-      <div className="row mx-0 bg-image form-passagem rounded-15"
+      <div className="row mx-0 bg-image form-passagem rounded-15 font-primary"
         style={{
           backgroundImage: `url(${urlWallpaper})`,
           minHeight: '120px'
         }}>
 
         <div
-          className="rounded-15 py-3"
-          style={{
-            backgroundColor: 'rgba(255,255,255,0.3)'
-          }}
+          className="rounded-15 p-4"
+          style={{ backgroundColor: 'rgba(255,255,255,0.6)' }}
         >
-          <div className="col-md-9 col-sm-12 p-4">
 
-            <Title label="Encontre sua passagem ideal com o maior desconto!" color="primary"/>
+          <Title
+            label="Encontre sua passagem ideal com o maior desconto!"
+            color="primary"
+          />
+          <PlaneSeparator
+            size={30}
+            color="primary"
+            widthPercentage={100}
+            gridColPlane={1}
+          />
+          <div className="col-md-9 col-sm-12">
             <form id="form-encontrar-passagem">
               <div className="container p-1">
-
-                <div className="row mb-3">
-                  <div className="col-sm-12 col-md-10 col-lg-8">
-
-                    <div className="row my-2">
-
-                      <div className="col-xs-12 col-sm-4 px-3 text-center">
-
-                        <div className="row">
-                          <FormularioLabel
-                            label="Adultos"
-                            inputName="txtAdultos"
-                          />
-                        </div>
-                        <div className="row">
-                          {btnDecrementarPessoa('adultos')}
-                          <div className="col-6 px-1">
-                            <input
-                              name="adultos"
-                              type="number"
-                              className="input-pessoa text-center w-100"
-                              value={formData.adultos}
-                              onChange={(e) => handleInputChange(e)}
-                            />
-                          </div>
-                          {btnIncrementarPessoa('adultos')}
-                        </div>
-                      </div>
-
-                      <div className="col-xs-12 col-sm-4 px-3 text-center">
-                        <div className="row">
-                          <FormularioLabel
-                            label="Crianças"
-                            inputName="txtCriancas"
-                          />
-                        </div>
-                        <div className="row">
-                          {btnDecrementarPessoa('criancas')}
-                          <div className="col-6 px-1">
-                            <input
-                              name="criancas"
-                              type="number"
-                              className="input-pessoa text-center w-100"
-                              value={formData.criancas}
-                              onChange={(e) => handleInputChange(e)}
-                            />
-                          </div>
-                          {btnIncrementarPessoa('criancas')}
-                        </div>
-                      </div>
-
-                      <div className="col-xs-12 col-sm-4 px-3 text-center">
-                        <div className="row">
-                          <FormularioLabel
-                            label="Bebês"
-                            inputName="txtBebes"
-                          />
-                        </div>
-                        <div className="row">
-                          {btnDecrementarPessoa('bebes')}
-                          <div className="col-6 px-1">
-                            <input
-                              name="bebes"
-                              type="number"
-                              className="input-pessoa text-center w-100"
-                              value={formData.bebes}
-                              onChange={(e) => handleInputChange(e)}
-                            />
-                          </div>
-                          {btnIncrementarPessoa('bebes')}
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-
-                <div className="row mb-3">
-
-                  <div className="col-sm-12 col-md-4 px-3 text-center">
-                    <div className="row">
-                      <FormularioLabel
-                        label="Origem"
-                        inputName="origem"
-                      />
-                    </div>
-                    <div className="row px-2">
-                      <input
-                        name="origem"
-                        type="text"
-                        className="m-auto"
-                        value={formData.origem}
-                        onChange={(e) => handleInputChange(e)}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="col-sm-12 col-md-4 text-center">
-                    <div className="row">
-                      <FormularioLabel
-                        label="Destino"
-                        inputName="destino"
-                      />
-                    </div>
-                    <div className="row px-2">
-                      <input
-                        name="destino"
-                        type="text"
-                        className="m-auto"
-                        value={formData.destino}
-                        onChange={(e) => handleInputChange(e)}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="col-sm-12 col-md-4 text-center my-1">
-                    <button
-                      className="text-white rounded w-75"
-                      style={{ maxWidth: '200px' }}
-                      onClick={(e) => trocarRota(e)}
-                    >Inverter<br/>{'<>'}</button>
-                  </div>
-
-                </div>
 
                 <div className="row mb-3">
 
@@ -275,62 +210,203 @@ const Encontre = () => {
                         type="checkbox"
                         name="soIda"
                         checked={formData.soIda}
-                        onChange={(e) => handleInputChange(e)}
+                        onChange={
+                          (e) => {
+                            handleInputChange(e)
+                            estaPronto()
+                          }
+                        }
+                        className="m-auto"
                       />
                     </div>
                   </div>
 
-                  <div className="col-sm-12 col-md-5 px-3 text-center">
-                    <div className="row">
-                      <FormularioLabel
-                        label="Ida"
-                        inputName="ida"
-                      />
-                    </div>
-                    <div className="row px-2">
-                      <DatePicker
-                        name="ida"
-                        selected={formData.ida}
-                        dateFormat="dd/MM/yyyy"
-                        onChange={(e) => handleDataChange(e, 'ida')}
-                        minDate={now}
-                        className="w-100 text-center"
-                      />
-                    </div>
+                  <div className="col-sm-12 col-md-5 text-center">
+                    <DatePicker
+                      name="ida"
+                      placeholderText="Ida"
+                      selected={formData.ida}
+                      dateFormat="dd/MM/yyyy"
+                      onChange={
+                        (e) => {
+                          handleDataChange(e, 'ida')
+                          estaPronto()
+                        }
+                      }
+                      minDate={now}
+                      className="m-auto w-100 my-1 text-center d-block"
+                    />
                   </div>
 
                   {!formData.soIda &&
-                  <div className="col-sm-12 col-md-5 text-center">
-                    <div className="row">
-                      <FormularioLabel
-                        label="Volta"
-                        inputName="volta"
-                      />
-                    </div>
-                    <div className="row px-2">
+                    <div className="col-sm-12 col-md-5 text-center">
                       <DatePicker
                         name="volta"
+                        placeholderText="Volta"
                         selected={formData.volta}
                         dateFormat="dd/MM/yyyy"
-                        onChange={(e) => handleDataChange(e, 'volta')}
+                        onChange={
+                          (e) => {
+                            handleDataChange(e, 'volta')
+                            estaPronto()
+                          }
+                        }
                         minDate={now}
-                        className="w-100 text-center"
+                        className="m-auto w-100 my-1 text-center"
                       />
                     </div>
-                  </div>
                   }
 
                 </div>
 
-                <div className="row mb-3">
+                <div className="row mb-3 position-relative">
 
-                  <div className="col-12 px-3 text-center">
-                    <div className="row">
-                      <button
-                        className="py-1 px-2 rounded"
-                        disabled={!formData.pronto}
-                      >Buscar passagens</button>
+                  <div className="col-sm-12 col-md-6 text-center">
+                    <Autocomplete id="busca-origem"
+                      freeSolo
+                      disableClearable
+                      options={airports.map((a) => `(${a.IATA}) ${a.city}, ${a.country}`)}
+                      renderInput={(params) => (
+                        <TextField
+                          {...params}
+                          InputProps={{ ...params.InputProps }}
+                          type="text"
+                          name="origem"
+                          placeholder="Origem"
+                          value={formData.origem}
+                          className="m-auto w-100 my-1"
+                          onSelect={
+                            (e) => {
+                              handleInputChange(e)
+                              estaPronto()
+                            }
+                          }
+                        />
+                      )}
+                    />
+                  </div>
+
+                  <div className="col-sm-12 col-md-6 text-center">
+                    <Autocomplete id="busca-destino"
+                      freeSolo
+                      disableClearable
+                      options={airports.map((a) => `${a.city} (${a.IATA}), ${a.country}`)}
+                      renderInput={(params) => (
+                        <TextField
+                          {...params}
+                          InputProps={{ ...params.InputProps }}
+                          type="text"
+                          name="destino"
+                          placeholder="Destino"
+                          className="m-auto w-100 my-1"
+                          value={formData.destino}
+                          onSelect={
+                            (e) => {
+                              handleInputChange(e)
+                              estaPronto()
+                            }
+                          }
+                        />
+                      )}
+                    />
+                  </div>
+
+                  {/* {btnTrocarRota} */}
+
+                </div>
+
+                <Collapsible title="Passageiros">
+
+                  <div className="row">
+                    <div className="col-xs-12 col-sm-4 px-3 my-1 text-center">
+                      <div className="row">
+                        {btnDecrementarPessoa('adultos')}
+                        <div className="col-6 px-1">
+                          <input
+                            name="adultos"
+                            type="number"
+                            className="text-center w-100"
+                            value={formData.adultos}
+                            onChange={
+                              (e) => {
+                                handleInputChange(e)
+                                estaPronto()
+                              }
+                            }
+                            disabled={true}
+                          />
+                        </div>
+                        {btnIncrementarPessoa('adultos')}
+                      </div>
+                      <div className="row">
+                        <FormularioLabel
+                          label="Adultos"
+                          inputName="txtAdultos"
+                        />
+                      </div>
                     </div>
+
+                    <div className="col-xs-12 col-sm-4 px-3 my-1 text-center">
+                      <div className="row">
+                        {btnDecrementarPessoa('criancas')}
+                        <div className="col-6 px-1">
+                          <input
+                            name="criancas"
+                            type="number"
+                            className="text-center w-100"
+                            value={formData.criancas}
+                            onChange={
+                              (e) => {
+                                handleInputChange(e)
+                                estaPronto()
+                              }
+                            }
+                            disabled={true}
+                          />
+                        </div>
+                        {btnIncrementarPessoa('criancas')}
+                      </div>
+                      <div className="row">
+                        <FormularioLabel
+                          label="Crianças"
+                          inputName="txtCriancas"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="col-xs-12 col-sm-4 px-3 my-1 text-center">
+                      <div className="row">
+                        {btnDecrementarPessoa('bebes')}
+                        <div className="col-6 px-1">
+                          <input
+                            name="bebes"
+                            type="number"
+                            className="text-center w-100"
+                            value={formData.bebes}
+                            onChange={
+                              (e) => {
+                                handleInputChange(e)
+                                estaPronto()
+                              }
+                            }
+                            disabled={true}
+                          />
+                        </div>
+                        {btnIncrementarPessoa('bebes')}
+                      </div>
+                      <div className="row">
+                        <FormularioLabel
+                          label="Bebês"
+                          inputName="txtBebes"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </Collapsible>
+
+                <div className="row my-2">
+                  <div className="col">
+                    {btnBuscarPassagens}
                   </div>
 
                 </div>

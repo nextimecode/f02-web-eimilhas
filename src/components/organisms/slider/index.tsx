@@ -5,7 +5,7 @@ import Depoimento from '../../molecules/depoimento'
 import Promocao from '../../molecules/promocao'
 
 type Props = {
-    content: any
+    content: Record<string, any>
     type: string
 }
 

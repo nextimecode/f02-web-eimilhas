@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
+import NextimeSvg from '../../atoms/iconsSvg/nextimeSvg'
 
 const FooterOwners = () => {
   return (
@@ -10,10 +11,11 @@ const FooterOwners = () => {
           Copyright © {new Date().getFullYear()} | EiMilhas
         </div>
         <div className="col-6 text-center py-2">
-          Developed by&nbsp;
+          Desenvolvido por&nbsp;
           <a href="https://nextime.com.br">
-            NeXTIME
+            <NextimeSvg size={1.5}/>
           </a>
+          <div style={{ display: 'none' }}>Desenvolvedor: <a href="https://github.com/marcuslamounier">Marcus Lamounier</a></div>
         </div>
       </div>
     </Container>
