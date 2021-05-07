@@ -144,7 +144,7 @@ const promocoes = [
       localEspecifico: 'Inglaterra',
       localGenerico: 'Europa',
       artigo: 'a',
-      preco: 2300,
+      preco: 2700,
       trecho: 'ida e volta'
     }
   },
