@@ -8,7 +8,7 @@ import Promocoes from '../components/organisms/promocoes'
 import PageTemplate from '../components/templates/pageTemplate'
 import Section from '../components/templates/section'
 
-export const whatsappUrl = 'https://api.whatsapp.com/send?phone=5531988715354'
+export const whatsappUrl = 'https://api.whatsapp.com/send?phone=5531996650233'
 export const instagramUrl = 'https://www.instagram.com/eimilhas/'
 export const emailUrl = 'mailto:eimilhasvoos@gmail.com'
 export const facebookUrl = 'https://www.facebook.com/eimilhas/'
@@ -292,18 +292,59 @@ const frequentQuestions = [
   },
   {
     question: {
-      label: 'Qual é o limite de bagagem despachada?',
+      label: 'Check-in e horário de chegada no aeroporto.',
       answer:
-        <div className="container">
-          <div className="row">
-            <div className="col-sm-12 col-md-6">
-              <img src={`${pathFaqImg}/bagagem_despachada_1.png`}/>
-            </div>
-            <div className="col-sm-12 col-md-6">
-              <img src={`${pathFaqImg}/bagagem_despachada_2.png`}/>
-            </div>
-          </div>
-        </div>
+        <>
+          <p>
+            O check-in poderá ser feito 48 horas antes do embarque, através do site ou aplicativo da companhia aérea escolhida. Procure apresentar-se ao embarque com antecedência de pelo menos 2 horas para voos nacionais e 3 horas para voos internacionais.
+          </p>
+        </>
+    }
+  },
+  {
+    question: {
+      label: 'Cheguei atrasado e preciso de ajuda.',
+      answer:
+        <>
+          <p>
+            É de responsabilidade do passageiro apresentar-se para o embarque com a antecedência determinada pela cia. aérea. Por padrão, para voos nacionais, a antecedência deve ser de 1 hora. Para voos internacionais, a antecedência deve ser de 2 horas.
+            Em caso de atraso, orientamos procurar o balcão da cia. aérea no próprio aeroporto para tentar reacomodação em outro voo, podendo haver diferença tarifária.
+            Em caso de no show no bilhete de ida, orientamos entrar em contato com nossa central de atendimento para realizarmos tentativa de manter ativo o bilhete de volta
+          </p>
+        </>
+    }
+  },
+  {
+    question: {
+      label: 'Marcação de assentos.',
+      answer:
+        <>
+          <p>
+            A marcação de assentos, de forma gratuita, é liberada no momento do check-in e pode ser feita diretamente no site ou aplicativo da companhia aérea.
+          </p>
+        </>
+    }
+  },
+  {
+    question: {
+      label: 'Check-in e horário de chegada no aeroporto.',
+      answer:
+        <>
+          <p>
+            O check-in poderá ser feito 48 horas antes do embarque, através do site ou aplicativo da companhia aérea escolhida. Procure apresentar-se ao embarque com antecedência de pelo menos 2 horas para voos nacionais e 3 horas para voos internacionais.
+          </p>
+        </>
+    }
+  },
+  {
+    question: {
+      label: 'Quais os documentos para embarque?',
+      answer:
+        <>
+          <p>
+            Na hora do embarque tenha em mãos o documento com foto para voos nacionais e passaporte para voos internacionais. Atenção: destinos internacionais podem pedir comprovantes extras. Consulte diretamente a companhia aérea para saber mais.
+          </p>
+        </>
     }
   },
   {
@@ -326,6 +367,47 @@ const frequentQuestions = [
           <p>
             <span className="fw-bold">Para voos nacionais</span>: comprovante vigente de vacina antirrábica, recomendado para animais com mais de 90 dias de vida. Ao aplicar a primeira dose, é necessário esperar 30 dias para o embarque. Se esse período não for respeitado ou se a vacina estiver fora do período de validade, seu animal não poderá viajar.
           </p>
+          Tem gente cuja paixão pelo seu bichinho de estimação é tão arrebatadora que chega a ser inimaginável excluir o bom amigo da viagem dos sonhos. Ainda bem que, para assegurar que todos viajem com conforto e bem-estar – inclusive os pet’s –, algumas regras atuais da aviação são favoráveis.
+          Hoje, por exemplo, cães e gatos de pequeno porte (até dez quilos, contando com a caixinha em que ele viaja) podem ser acomodados na cabine, bem juntinho de seus donos. Outros animais, de maior porte ou selvagens, devem responder a alguns requisitos para ter a autorização de viajar nos porões do avião.
+          Mas, se você quer levar seu Yorkshire para passear – e não uma sucuri de vários metros –, este post é para você. Entenda nas dicas abaixo como acomodar confortavelmente seu bichinho, garantir a segurança dele e das pessoas no voo e saiba os documentos indispensáveis para embarcar junto de seu animal de estimação na próxima aventura.
+          Informe-se, com antecedência, das condições de voo do seu animal
+          Como dissemos acima, bichinhos com menos de 10kg (contando seu recipiente de viagem) podem viajar na cabine com os donos, enquanto animais de maior porte devem ser transportados no compartimento de cargas do avião, a menos que se trate de cão guia ou de assistência emocional.
+          Portanto, a primeira regra é clara: para preparar a viagem, você precisa saber com muita antecedência em qual dos casos seu pet se encaixa.
+          Para embarcar com um animal, todas as documentações (veja a listinha logo abaixo!) devem estar em dia e, além disso, você precisa saber se a viagem exige uma vacina específica, dependendo da cidade ou país de destino. Outro ponto de atenção é buscar saber se a companhia aérea aceita a raça do bichinho que vai viajar contigo.
+          O recomendado é tentar se informar com alguns meses de antecedência – cinco é o mais indicado – sobre as condições para o embarque do animal. Mas, se a viagem for marcada de última hora, ligue imediatamente para a companhia aérea que irá operar o voo e veja as possibilidades, restrições e valores adicionais do serviço de transporte de pet’s.
+          Lembre-se de que, dependendo da companhia aérea ou do peso total do animal e de seu container, é possível que você tenha que pagar a mais para embarcar com seu bichinho.
+          Solicite o serviço
+          Outra dica importante é solicitar o serviço de transporte do animal tão logo você esteja inteirado das boas condições de voo do seu bichinho. Ele pode ser feito imediatamente, no site da companhia, depois da emissão da sua passagem – e, em alguns casos, as empresas de transporte aéreo deixam que a solicitação seja feita horas antes do voo, para destinos domésticos. Então memorize bem: antes de embarcar, será necessário ler as regras do transporte de animais no site na companhia do seu voo e preencher o formulário de solicitação do serviço. Esse é um dos documentos obrigatórios para que seu animal viaje contigo em voos nacionais e internacionais, por isso não vale esquecê-lo.
+          Apareça no aeroporto com a completa documentação exigida
+          Viajar com animais é quase tão complexo quanto viajar com crianças na questão da documentação necessária: se não levar exatamente tudo o  que é exigido, nenhum dos dois vai embarcar – e, provavelmente, nem você.
+          Para voos nacionais, além da solicitação do transporte, são exigidos o atestado sanitário (preenchido pelo veterinário), que deve falar sobre as boas condições de saúde do animal, e é válido por dez dias após a data de emissão, e a carteira de vacinação, constando a vacina antirrábica, que deve ter sido aplicada há mais de 30 dias e menos de um ano, com a inclusão do laboratório produtor, tipo e número da ampola utilizada.
+          Já no caso de voos internacionais, dificilmente o animalzinho viajará na cabine – mas, de qualquer jeito, é preciso apresentar os mesmos documentos exigidos para voos domésticos (solicitação do transporte, atestado sanitário e carteira de vacinação), além do Certificado Veterinário Internacional (CVI), emitido especificamente para voos internacionais e válido por 60 dias a partir da data de emissão.
+          Alguns destinos nacionais e internacionais têm regulamentação própria para entrada e saída de animais por aeroportos, como o de Fernando de Noronha e de Carajás, no Pará. Não deixe de se informar sobre as exigências documentais da sua cidade de destino para evitar problemas.
+          Acomode seu bichinho com conforto e segurança
+          Ele não vai utilizar cinto de segurança, mas também vai decolar e pousar e sentir as turbulências do voo. E, mais importante: ele não vai sair da caixinha dele, seja dentro da cabine ou no compartimento de carga. Por isso, é imprescindível ter certeza de que seu animal está viajando de maneira confortável e, principalmente, segura.
+          Algumas dicas para isso são se certificar de que o container é resistente, impermeável se e promove boas condições de respiração. Boa parte das companhias aéreas exige que ele seja feito de fibra ou plástico rígido, proibindo o embarque de animais em caixinhas de madeira, palha ou malas flexíveis.
+          Se o ser humano já acha ruim quando o espaço entre as poltronas não é suficiente, imagine acomodar o seu amiguinho em uma caixa menor só para que ela seja aceita no embarque… para evitar esse problema, compre uma embalagem onde o animal consiga ficar em pé e possa se movimentar ao menos através de um giro de 360°.
+          Escolha um container com dispositivo de segurança para evitar que ele abra durante o voo e seu animalzinho fique livre pela cabine do avião. Além de incomodar outros passageiros, ele pode se ferir em caso de turbulência se estiver andando livremente pelos corredores.
+          Aliás, vale lembrar o óbvio: não dá pra abrir as janelas do avião, então faça o embarque do seu bichinho com ele limpo, saudável e sem odores desagradáveis, além de estar em uma “casinha” igualmente limpa, desinfetada e esterilizada para o voo. Isso evita cheirinhos e, mais importante, a contaminação de passageiros, ou do próprio animal, por alguma doença.
+          <p>
+          Por fim, tente seguir todas as dicas com bastante antecedência para garantir que seu pet embarque na cabine com você: as companhias operam com um limite de três a quatro animais por voo na cabine do avião e, se essa fila já estiver completa, seu bichinho vai viajar no compartimento de carga, ainda que tenha as dimensões exatas para ir junto a você.
+          Para saber mais sobre as regras de transporte de pet’s adotadas por cada uma das três companhias aéreas com as quais emitimos nossos bilhetes (Azul, Gol e LATAM), recomendamos as seguintes leituras:
+          </p>
+          Regras Azul
+          <ul>
+            <li><a href="https://www.voeazul.com.br/para-sua-viagem/servicos/pet-na-cabine">Pet na cabine</a></li>
+          </ul>
+          Regras Gol
+          <ul>
+            <li><a href="https://www.voegol.com.br/pt/informacoes/viaje-sem-duvidas/transporte-de-animais-de-estimacao">Transporte de animais de estimação</a></li>
+            <li><a href="https://www.voegol.com.br/pt/servicos/transporte-de-animais-no-aviao">Transporte de animais no avião</a></li>
+          </ul>
+          Regras Latam
+          <ul>
+            <li><a href="https://helpdesk.latam.com/hc/pt-br/articles/360001437308-Posso-viajar-no-avi%C3%A3o-com-meu-animal-de-estima%C3%A7%C3%A3o-">Posso viajar no avião com meu animal</a></li>
+            <li><a href="https://www.latam.com/pt_br/informacao-para-sua-viagem/servico-de-transporte-de-animais-de-estimacao/na-cabine/">Serviço de transporte de animais de estimação na cabine</a></li>
+            <li><a href="https://www.latamtrade.com/pt_us/procom/animais_cabine_petc">Animas cabine petc</a></li>
+          </ul>
           <p>
             Para viajar junto ao seu animal em <span className="fw-bold">cabine Economy</span>, você deverá levá-lo dentro de um recipiente apropriado, que deve atender às seguintes regras:
           </p>
