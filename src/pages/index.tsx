@@ -408,6 +408,58 @@ const pathFaqImg = 'assets/img/faq'
 const frequentQuestions = [
   {
     question: {
+      label: 'Taxas de cancelamento e remarcação.',
+      answer:
+        <>
+          <p>
+            <b>TAP:</b> cancelamento: 120 euros o trecho por passageiro
+            Remarcação: 50 euros mais diferença de pontos (milhas), se houver
+          </p>
+          <p>
+            <b>GOL:</b> cancelamento: 300 reais o trecho por passageiro para voos nacionais e U$ 150 dólares para voos internacionais e U$ 300 dólares para voos para os EUA.
+            Remarcação: 250 reais mais diferença de pontos (milhas), se houver
+          </p>
+          <p>
+            <b>AZUL:</b> cancelamentos: 350 reais para voos nacionais e internacionais
+            Remarcação: 200 reais mais diferença de pontos (milhas), se houver
+          </p>
+          <p>
+            <b>LATAM:</b> cancelamento: 350 reais voos nacionais por trecho por passageiro e U$ 200 dólares por trecho por passageiro para voos internacionais.
+          </p>
+          <p>
+            Remarcação:  250 reais para voos nacionais e U$ 120 dólares para voos internacionais.
+          </p>
+          <p>
+            *Obs: em época de pandemia, muito dessas remarcações (não está cobrando a taxa de remarcação, e sim apenas a diferença de pontos (milhas), se houver e cancelamento está podendo ser gratuito ou não dependendo da companhia.
+          </p>
+        </>
+    }
+  },
+  {
+    question: {
+      label: 'Preço das malas.',
+      answer:
+        <>
+          <p>
+            Nacionais:  Latam: 60 a 110 reais (normalmente 60 reais)
+          </p>
+          <p>
+            Azul: 60 ou 80 reais
+          </p>
+          <p>
+            Gol: 60 reais
+          </p>
+          <p>
+            Internacionais: 120 a 180 reais (Azul, Latam e GOL) para a segunda mala (a primeira já é inclusa, dependendo da companhia, até duas)
+          </p>
+          <p>
+            TAP: 45 euros para a segunda mala (a primeira já é inclusa), aproximadamente 300 reais.
+          </p>
+        </>
+    }
+  },
+  {
+    question: {
       label: 'Meu voo foi alterado ou cancelado pela companhia aérea. O que posso fazer?',
       answer:
         <>
@@ -460,11 +512,8 @@ const frequentQuestions = [
       answer:
         <div className="container">
           <div className="row">
-            <div className="col-sm-12 col-md-6">
-              <img src={`${pathFaqImg}/bagagem_mao_1.png`}/>
-            </div>
-            <div className="col-sm-12 col-md-6">
-              <img src={`${pathFaqImg}/bagagem_mao_2.png`}/>
+            <div className="col-sm-12">
+              <img src={`${pathFaqImg}/bagagem_mao.webp`}/>
             </div>
           </div>
         </div>
