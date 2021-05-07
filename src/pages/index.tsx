@@ -140,21 +140,41 @@ const promocoes = [
   },
   {
     promocao: {
-      foto: `${pathLugares}/ny.jpg`,
-      localEspecifico: 'Estados Unidos',
-      localGenerico: 'AMERICA DO NORTE',
-      artigo: 'a',
-      preco: 2000,
-      trecho: 'ida e volta'
-    }
-  },
-  {
-    promocao: {
       foto: `${pathLugares}/londres.jpg`,
       localEspecifico: 'Inglaterra',
       localGenerico: 'Europa',
       artigo: 'a',
       preco: 2300,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/turquia.png`,
+      localEspecifico: 'Turquia',
+      localGenerico: 'Europa',
+      artigo: 'a',
+      preco: 3000,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/grecia.png`,
+      localEspecifico: 'Grécia',
+      localGenerico: 'Europa',
+      artigo: 'a',
+      preco: 3000,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/alemanha.png`,
+      localEspecifico: 'Alemanha',
+      localGenerico: 'Europa',
+      artigo: 'a',
+      preco: 2500,
       trecho: 'ida e volta'
     }
   },
@@ -170,11 +190,171 @@ const promocoes = [
   },
   {
     promocao: {
-      foto: `${pathLugares}/sydney.jpg`,
-      localEspecifico: 'Austrália',
-      localGenerico: 'Austrália',
+      foto: `${pathLugares}/ny.jpg`,
+      localEspecifico: 'Estados Unidos',
+      localGenerico: 'AMERICA DO NORTE',
+      artigo: 'a',
+      preco: 2000,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/japao.jpeg`,
+      localEspecifico: 'Japão',
+      localGenerico: 'Ásia',
       artigo: 'a',
       preco: 5000,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/malasia.jpeg`,
+      localEspecifico: 'Malásia',
+      localGenerico: 'Ásia',
+      artigo: 'a',
+      preco: 5000,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/tailandia.jpeg`,
+      localEspecifico: 'Tailândia',
+      localGenerico: 'Ásia',
+      artigo: 'a',
+      preco: 5000,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/indonesia.jpeg`,
+      localEspecifico: 'Indonésia',
+      localGenerico: 'Ásia',
+      artigo: 'a',
+      preco: 5000,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/catar.jpeg`,
+      localEspecifico: 'Catar',
+      localGenerico: 'Ásia',
+      artigo: 'a',
+      preco: 3000,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/africadosul.png`,
+      localEspecifico: 'África do Sul',
+      localGenerico: 'África',
+      artigo: 'a',
+      preco: 1500,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/marrocos.png`,
+      localEspecifico: 'Marrocos',
+      localGenerico: 'África',
+      artigo: 'a',
+      preco: 2500,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/egito.png`,
+      localEspecifico: 'Egito',
+      localGenerico: 'África',
+      artigo: 'a',
+      preco: 2500,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/colombia.png`,
+      localEspecifico: 'Colômbia',
+      localGenerico: 'AMÉRICA DO SUL',
+      artigo: 'a',
+      preco: 1500,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/peru.png`,
+      localEspecifico: 'Peru',
+      localGenerico: 'AMÉRICA DO SUL',
+      artigo: 'a',
+      preco: 1500,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/uruguai.png`,
+      localEspecifico: 'URUGUAI',
+      localGenerico: 'AMÉRICA DO SUL',
+      artigo: 'a',
+      preco: 1000,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/chile.png`,
+      localEspecifico: 'Chile',
+      localGenerico: 'AMÉRICA DO SUL',
+      artigo: 'a',
+      preco: 1000,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/argentina.png`,
+      localEspecifico: 'ARGENTINA',
+      localGenerico: 'AMÉRICA DO SUL',
+      artigo: 'a',
+      preco: 1000,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/canada.png`,
+      localEspecifico: 'Canadá',
+      localGenerico: 'AMÉRICA DO NORTE',
+      artigo: 'a',
+      preco: 2700,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/mexico.png`,
+      localEspecifico: 'México',
+      localGenerico: 'AMÉRICA DO NORTE',
+      artigo: 'a',
+      preco: 2500,
+      trecho: 'ida e volta'
+    }
+  },
+  {
+    promocao: {
+      foto: `${pathLugares}/caribe.png`,
+      localEspecifico: 'Caribe',
+      localGenerico: 'AMÉRICA CENTRAL',
+      artigo: 'a',
+      preco: 2500,
       trecho: 'ida e volta'
     }
   }
