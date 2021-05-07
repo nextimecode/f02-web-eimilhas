@@ -413,21 +413,21 @@ const frequentQuestions = [
         <>
           <p>
             <b>TAP:</b> cancelamento: 120 euros o trecho por passageiro
-            Remarcação: 50 euros mais diferença de pontos (milhas), se houver
+            <p>Remarcação: 50 euros mais diferença de pontos (milhas), se houver</p>
           </p>
           <p>
             <b>GOL:</b> cancelamento: 300 reais o trecho por passageiro para voos nacionais e U$ 150 dólares para voos internacionais e U$ 300 dólares para voos para os EUA.
-            Remarcação: 250 reais mais diferença de pontos (milhas), se houver
+            <p>Remarcação: 250 reais mais diferença de pontos (milhas), se houver</p>
           </p>
           <p>
             <b>AZUL:</b> cancelamentos: 350 reais para voos nacionais e internacionais
-            Remarcação: 200 reais mais diferença de pontos (milhas), se houver
+            <p>Remarcação: 200 reais mais diferença de pontos (milhas), se houver</p>
           </p>
           <p>
             <b>LATAM:</b> cancelamento: 350 reais voos nacionais por trecho por passageiro e U$ 200 dólares por trecho por passageiro para voos internacionais.
           </p>
           <p>
-            Remarcação:  250 reais para voos nacionais e U$ 120 dólares para voos internacionais.
+            <p>Remarcação:  250 reais para voos nacionais e U$ 120 dólares para voos internacionais.</p>
           </p>
           <p>
             *Obs: em época de pandemia, muito dessas remarcações (não está cobrando a taxa de remarcação, e sim apenas a diferença de pontos (milhas), se houver e cancelamento está podendo ser gratuito ou não dependendo da companhia.
@@ -639,18 +639,18 @@ const frequentQuestions = [
           </p>
           Regras Azul
           <ul>
-            <li><a href="https://www.voeazul.com.br/para-sua-viagem/servicos/pet-na-cabine">Pet na cabine</a></li>
+            <li><a href="https://www.voeazul.com.br/para-sua-viagem/servicos/pet-na-cabine">https://www.voeazul.com.br/para-sua-viagem/servicos/pet-na-cabine"</a></li>
           </ul>
           Regras Gol
           <ul>
-            <li><a href="https://www.voegol.com.br/pt/informacoes/viaje-sem-duvidas/transporte-de-animais-de-estimacao">Transporte de animais de estimação</a></li>
-            <li><a href="https://www.voegol.com.br/pt/servicos/transporte-de-animais-no-aviao">Transporte de animais no avião</a></li>
+            <li><a href="https://www.voegol.com.br/pt/informacoes/viaje-sem-duvidas/transporte-de-animais-de-estimacao">https://www.voegol.com.br/pt/informacoes/viaje-sem-duvidas/transporte-de-animais-de-estimacao</a></li>
+            <li><a href="https://www.voegol.com.br/pt/servicos/transporte-de-animais-no-aviao">https://www.voegol.com.br/pt/servicos/transporte-de-animais-no-aviao</a></li>
           </ul>
           Regras Latam
           <ul>
-            <li><a href="https://helpdesk.latam.com/hc/pt-br/articles/360001437308-Posso-viajar-no-avi%C3%A3o-com-meu-animal-de-estima%C3%A7%C3%A3o-">Posso viajar no avião com meu animal</a></li>
-            <li><a href="https://www.latam.com/pt_br/informacao-para-sua-viagem/servico-de-transporte-de-animais-de-estimacao/na-cabine/">Serviço de transporte de animais de estimação na cabine</a></li>
-            <li><a href="https://www.latamtrade.com/pt_us/procom/animais_cabine_petc">Animas cabine petc</a></li>
+            <li><a href="https://helpdesk.latam.com/hc/pt-br/articles/360001437308-Posso-viajar-no-avi%C3%A3o-com-meu-animal-de-estima%C3%A7%C3%A3o-">https://helpdesk.latam.com/hc/pt-br/articles/360001437308-Posso-viajar-no-avi%C3%A3o-com-meu-animal-de-estima%C3%A7%C3%A3o-</a></li>
+            <li><a href="https://www.latam.com/pt_br/informacao-para-sua-viagem/servico-de-transporte-de-animais-de-estimacao/na-cabine/">https://www.latam.com/pt_br/informacao-para-sua-viagem/servico-de-transporte-de-animais-de-estimacao/na-cabine/</a></li>
+            <li><a href="https://www.latamtrade.com/pt_us/procom/animais_cabine_petc">https://www.latamtrade.com/pt_us/procom/animais_cabine_petc</a></li>
           </ul>
           <p>
             Para viajar junto ao seu animal em <span className="fw-bold">cabine Economy</span>, você deverá levá-lo dentro de um recipiente apropriado, que deve atender às seguintes regras:
