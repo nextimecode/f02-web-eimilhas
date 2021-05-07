@@ -639,7 +639,7 @@ const frequentQuestions = [
           </p>
           Regras Azul
           <ul>
-            <li><a href="https://www.voeazul.com.br/para-sua-viagem/servicos/pet-na-cabine">https://www.voeazul.com.br/para-sua-viagem/servicos/pet-na-cabine"</a></li>
+            <li><a href="https://www.voeazul.com.br/para-sua-viagem/servicos/pet-na-cabine">https://www.voeazul.com.br/para-sua-viagem/servicos/pet-na-cabine</a></li>
           </ul>
           Regras Gol
           <ul>
