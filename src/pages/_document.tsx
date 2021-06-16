@@ -48,8 +48,18 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Roboto:400,500,700"
             rel="stylesheet"
           />
-
           <link rel="icon" href="/favicon.png" />
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-MMLFYDK66Y" />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-MMLFYDK66Y');
+            `
+            }}
+          />
         </Head>
         <body>
           <Main />
