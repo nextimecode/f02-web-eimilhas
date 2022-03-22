@@ -412,25 +412,75 @@ const frequentQuestions = [
       answer:
         <>
           <p>
-            <b>TAP:</b> cancelamento: 120 euros o trecho por passageiro
-            <p>Remarcação: 50 euros mais diferença de pontos (milhas), se houver</p>
+            <b>TAP:</b>
+            <ul>
+              <li>
+                Cancelamento: €120,00 euros por passageiro.
+              </li>
+              <li>
+                Remarcação: 50 euros mais diferença de pontos (milhas ou dinheiro), se houver.
+              </li>
+              <li>
+                Vôos alterados ou cancelados pela companhia, a remarcação ou o cancelamento são gratuitos, porém o reembolso das taxas se perde €25 euros da taxa de emissão por trecho. e as taxas aeroportuárias são reembolsadas em algumas situações em até 12 meses.
+              </li>
+            </ul>
           </p>
           <p>
-            <b>GOL:</b> cancelamento: 300 reais o trecho por passageiro para voos nacionais e U$ 150 dólares para voos internacionais e U$ 300 dólares para voos para os EUA.
-            <p>Remarcação: 250 reais mais diferença de pontos (milhas), se houver</p>
+            <b>GOL:</b>
+            <ul>
+              <li>
+                Cancelamento nacional: R$ 300,00 reais.
+              </li>
+              <li>
+                Cancelamento internacional: pode ser $150 dólares, $300 dólares ou até não reembolsado. Varia de vôo para vôo.
+              </li>
+              <li>
+                Remarcação: <span className="text-red">não há remarcação com milhas, somente cancelamentos.</span>
+              </li>
+              <li>
+                Vôos alterados ou cancelados pela companhia, a remarcação ou o cancelamento são gratuitos. As taxas aeroportuárias são reembolsadas em algumas situações em até 12 meses.
+              </li>
+            </ul>
           </p>
           <p>
-            <b>AZUL:</b> cancelamentos: 350 reais para voos nacionais e internacionais
-            <p>Remarcação: 200 reais mais diferença de pontos (milhas), se houver</p>
+            <b>AZUL:</b>
+            <ul>
+              <li>
+                Cancelamento nacional: R$ 300,00 reais por trecho mais diferença tarifária (milhas ou dinheiro), se houver.
+              </li>
+              <li>
+                Cancelamento internacional: $150 dólares mais a diferença tarifária (milhas os dinheiro), se houver.
+              </li>
+              <li>
+                Remarcação:
+              </li>
+              <li>
+                Vôos alterados ou cancelados pela companhia, a remarcação ou o cancelamento são gratuitos, porém o reembolso das taxas se perde r$ 27,90 da taxa de emissão por trecho. e as taxas aeroportuárias são reembolsadas em algumas situações em até 12 meses.
+              </li>
+            </ul>
           </p>
           <p>
-            <b>LATAM:</b> cancelamento: 350 reais voos nacionais por trecho por passageiro e U$ 200 dólares por trecho por passageiro para voos internacionais.
-          </p>
-          <p>
-            <p>Remarcação:  250 reais para voos nacionais e U$ 120 dólares para voos internacionais.</p>
-          </p>
-          <p>
-            *Obs: em época de pandemia, muito dessas remarcações (não está cobrando a taxa de remarcação, e sim apenas a diferença de pontos (milhas), se houver e cancelamento está podendo ser gratuito ou não dependendo da companhia.
+            <b>LATAM:</b>
+            <ul>
+              <li>
+                Cancelamento nacional: R$ 250,00 reais mais diferença tarifária, se houver.
+              </li>
+              <li>
+                Cancelamento internacional: voos para os EUA, $200 dólares a remarcação + a diferença tarifária, se houver.
+              </li>
+              <li>
+                Remarcação: $150 dólares + a diferença tarifária, se houver.
+              </li>
+              <li>
+                Vôos alterados ou cancelados pela companhia, a remarcação ou o cancelamento são gratuitos, porém o reembolso das taxas se perde r$ 17,00 da taxa de emissão por trecho para vôos nacionais e $20 doláres por trecho para vôos internacionais e as taxas aeroportuárias são reembolsadas em algumas situações em até 12 meses.
+              </li>
+              <li>
+                Cancelamento em até 24hrs é cobrado o valor de r$ 80,00 reais + a taxa de emissão que varia de conpanhia para companhia.
+              </li>
+              <li>
+                Todas as taxas internacionais são considerados o dólar ou o euro turismo + iof (6,38%) + 5% da variação cambial. Pagamento no cartão de crédito tem um acréscimo de 5% do preço final.
+              </li>
+            </ul>
           </p>
         </>
     }
@@ -441,19 +491,31 @@ const frequentQuestions = [
       answer:
         <>
           <p>
-            Nacionais:  Latam: 60 a 110 reais (normalmente 60 reais)
+            <b>Nacionais:</b>
           </p>
           <p>
-            Azul: 60 ou 80 reais
+            - Latam: 100 a 140 reais (DEPENDE DO TRECHO E QUANDO COLOCA).
           </p>
           <p>
-            Gol: 60 reais
+            - Azul: 90 ou 120 reais (DEPENDE DO TRECHO E QUANDO COLOCA).
           </p>
           <p>
-            Internacionais: 120 a 180 reais (Azul, Latam e GOL) para a segunda mala (a primeira já é inclusa, dependendo da companhia, até duas)
+            - Gol: 80 a 100 reais
           </p>
           <p>
-            TAP: 45 euros para a segunda mala (a primeira já é inclusa), aproximadamente 300 reais.
+            <b>Internacionais:</b>
+          </p>
+          <p>
+            140 a 300 reais (Azul, Latam e GOL) para a segunda mala (a primeira já é inclusa, dependendo da companhia, até duas)
+          </p>
+          <p>
+            TAP: €55 a 100 EUROS PARA A SEGUNDA MALA (A PRIMEIRA JÁ É INCLUSA, DEPENDE DO TRECHO. PORTUGUAL E ESPANHA € 55 EUROS. DEMAIS PAÍSES DA EUROPA: €65 EUROS. EUA: € 100 EUROS. APERTE CTRL PARA ACESSAR O LINK.
+          </p>
+          <p>
+            TODAS AS TAXAS INTERNACIONAIS SÃO CONSIDERADOS O DÓLAR OU O EURO TURISMO + IOF (6,38%) + 5% DA VARIAÇÃO CAMBIAL.
+          </p>
+          <p>
+            PAGAMENTO NO CARTÃO DE CRÉDITO TEM UM ACRÉSCIMO DE 5% DO PREÇO FINAL.
           </p>
         </>
     }
