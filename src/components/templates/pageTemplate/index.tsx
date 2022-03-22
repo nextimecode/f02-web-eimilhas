@@ -3,10 +3,13 @@ import Head from 'next/head'
 import Header from '../header'
 import Footer from '../footer'
 import { NavLinkProps } from '../../../types/types'
+import { Box } from '@chakra-ui/react'
+import NextWhatsIcon from '../../atoms/nextWhatsIcon'
+import Link from 'next/link'
 
 type Props = {
-    children: unknown,
-    menuLinks: Record<string, NavLinkProps>[]
+  children: unknown,
+  menuLinks: Record<string, NavLinkProps>[]
 }
 
 const PageTemplate = ({
@@ -19,6 +22,14 @@ const PageTemplate = ({
     <>
       <Head>
         <title>EiMilhas</title>
+        <meta name="author" content="NeXTIME"></meta>
+        <meta name="description" content="EiMilhas, encontre sua passagem ideal com o maior desconto!" />
+        <meta name="keywords" content="milhas, viagem, voar, passagem, avião, trip" />
+        <meta property="og:title" content="milhas, viagem, voar, passagem, avião, trip" />
+        <meta property="og:type" content="company" />
+        <meta property="og:image" content="https://www.eimilhas.com.br/assets/img/mala.jpg"/>
+        <meta property="og:url" content="https://www.eimilhas.com.br/"/>
+        <meta property="og:site_name" content="Ei Milhas"/>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/reactstrap/4.8.0/reactstrap.min.js"
@@ -44,6 +55,21 @@ const PageTemplate = ({
             urlLogo={urlLogo}
           />
         </footer>
+
+        <Box
+          position="fixed"
+          width="60px"
+          height="60px"
+          zIndex={100}
+          bottom="20px"
+          right="20px"
+        >
+          <Link href={'https://api.whatsapp.com/send?phone=5531996650233&text=Ol%C3%A1,%20Eimilhas!'}>
+            <a target="_blank" rel="noreferrer">
+              <NextWhatsIcon />
+            </a>
+          </Link>
+        </Box>
       </div>
     </>
   )
