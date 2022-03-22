@@ -1,24 +1,57 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
+import { Box, Flex, HStack, Link } from '@chakra-ui/react'
 import NextimeSvg from '../../atoms/iconsSvg/nextimeSvg'
+import packageInfo from '../../../../package.json'
+
+const NeXTIMEColor = '#202F4F'
+const version = packageInfo.version
 
 const FooterOwners = () => {
   return (
-    <Container className="bg-red text-white font-primary py-2" fluid={true}>
-      <div className="row">
+    <Flex
+      bgColor='primary'
+      color='white'
+      fontSize='sm'
+      w='100%'
+      display={['block', 'flex']}
+      alignItems='center'
+      h={[28, 14]}
+    >
+      <Box
+        as='div'
+        w={['100%', '50%']}
+        textAlign='center'
+        py={[3, 4]}
+      >
+          Copyright © {new Date().getFullYear()} | EiMilhas | v.{version}
+      </Box>
 
-        <div className="col-6 text-center py-2">
-          Copyright © {new Date().getFullYear()} | EiMilhas
-        </div>
-        <div className="col-6 text-center py-2">
-          Desenvolvido por&nbsp;
-          <a href="https://nextime.com.br">
+      <Box
+        as='div'
+        placeContent='center'
+        w={['100%', '50%']}
+        py={[3, 4]}
+      >
+        <HStack
+          display='flex'
+          placeContent={['center', 'auto']}
+        >
+          <Box as='span'>Desenvolvido por </Box>
+          <Link
+            href="https://nextime.com.br"
+            _hover={{
+              transition: '0.3s',
+              fill: NeXTIMEColor
+            }}
+            transition='0.3s'
+            fill='white'
+          >
             <NextimeSvg size={1.5}/>
-          </a>
-          <div style={{ display: 'none' }}>Desenvolvedor: <a href="https://github.com/marcuslamounier">Marcus Lamounier</a></div>
-        </div>
-      </div>
-    </Container>
+          </Link>
+        </HStack>
+      </Box>
+
+    </Flex>
   )
 }
 

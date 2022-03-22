@@ -94,7 +94,7 @@ const promocoes = [
       localEspecifico: 'Espanha',
       localGenerico: 'Europa',
       artigo: 'a',
-      preco: 2300,
+      preco: 3500,
       trecho: 'ida e volta'
     }
   },
@@ -104,7 +104,7 @@ const promocoes = [
       localEspecifico: 'Portugal',
       localGenerico: 'Europa',
       artigo: 'a',
-      preco: 2300,
+      preco: 3500,
       trecho: 'ida e volta'
     }
   },
@@ -114,7 +114,7 @@ const promocoes = [
       localEspecifico: 'Bélgica',
       localGenerico: 'Europa',
       artigo: 'a',
-      preco: 2500,
+      preco: 3800,
       trecho: 'ida e volta'
     }
   },
@@ -124,7 +124,7 @@ const promocoes = [
       localEspecifico: 'Holanda',
       localGenerico: 'Europa',
       artigo: 'a',
-      preco: 2500,
+      preco: 3700,
       trecho: 'ida e volta'
     }
   },
@@ -134,7 +134,7 @@ const promocoes = [
       localEspecifico: 'França',
       localGenerico: 'Europa',
       artigo: 'a',
-      preco: 2300,
+      preco: 3700,
       trecho: 'ida e volta'
     }
   },
@@ -144,7 +144,7 @@ const promocoes = [
       localEspecifico: 'Inglaterra',
       localGenerico: 'Europa',
       artigo: 'a',
-      preco: 2700,
+      preco: 4000,
       trecho: 'ida e volta'
     }
   },
@@ -154,7 +154,7 @@ const promocoes = [
       localEspecifico: 'Turquia',
       localGenerico: 'Europa',
       artigo: 'a',
-      preco: 3000,
+      preco: 5000,
       trecho: 'ida e volta'
     }
   },
@@ -164,7 +164,7 @@ const promocoes = [
       localEspecifico: 'Grécia',
       localGenerico: 'Europa',
       artigo: 'a',
-      preco: 3000,
+      preco: 5000,
       trecho: 'ida e volta'
     }
   },
@@ -174,7 +174,7 @@ const promocoes = [
       localEspecifico: 'Alemanha',
       localGenerico: 'Europa',
       artigo: 'a',
-      preco: 2500,
+      preco: 3700,
       trecho: 'ida e volta'
     }
   },
@@ -184,7 +184,7 @@ const promocoes = [
       localEspecifico: 'Itália',
       localGenerico: 'Europa',
       artigo: 'a',
-      preco: 2300,
+      preco: 3700,
       trecho: 'ida e volta'
     }
   },
@@ -194,7 +194,7 @@ const promocoes = [
       localEspecifico: 'Estados Unidos',
       localGenerico: 'AMERICA DO NORTE',
       artigo: 'a',
-      preco: 2000,
+      preco: 3500,
       trecho: 'ida e volta'
     }
   },
@@ -204,7 +204,7 @@ const promocoes = [
       localEspecifico: 'Japão',
       localGenerico: 'Ásia',
       artigo: 'a',
-      preco: 5000,
+      preco: 6000,
       trecho: 'ida e volta'
     }
   },
@@ -214,7 +214,7 @@ const promocoes = [
       localEspecifico: 'Malásia',
       localGenerico: 'Ásia',
       artigo: 'a',
-      preco: 5000,
+      preco: 7000,
       trecho: 'ida e volta'
     }
   },
@@ -224,7 +224,7 @@ const promocoes = [
       localEspecifico: 'Tailândia',
       localGenerico: 'Ásia',
       artigo: 'a',
-      preco: 5000,
+      preco: 7000,
       trecho: 'ida e volta'
     }
   },
@@ -234,7 +234,7 @@ const promocoes = [
       localEspecifico: 'Indonésia',
       localGenerico: 'Ásia',
       artigo: 'a',
-      preco: 5000,
+      preco: 7000,
       trecho: 'ida e volta'
     }
   },
@@ -244,7 +244,7 @@ const promocoes = [
       localEspecifico: 'Catar',
       localGenerico: 'Ásia',
       artigo: 'a',
-      preco: 3000,
+      preco: 5000,
       trecho: 'ida e volta'
     }
   },
@@ -254,7 +254,7 @@ const promocoes = [
       localEspecifico: 'África do Sul',
       localGenerico: 'África',
       artigo: 'a',
-      preco: 1500,
+      preco: 3500,
       trecho: 'ida e volta'
     }
   },
@@ -264,7 +264,7 @@ const promocoes = [
       localEspecifico: 'Marrocos',
       localGenerico: 'África',
       artigo: 'a',
-      preco: 2500,
+      preco: 3500,
       trecho: 'ida e volta'
     }
   },
@@ -274,7 +274,7 @@ const promocoes = [
       localEspecifico: 'Egito',
       localGenerico: 'África',
       artigo: 'a',
-      preco: 2500,
+      preco: 4500,
       trecho: 'ida e volta'
     }
   },
@@ -284,7 +284,7 @@ const promocoes = [
       localEspecifico: 'Colômbia',
       localGenerico: 'AMÉRICA DO SUL',
       artigo: 'a',
-      preco: 1500,
+      preco: 2500,
       trecho: 'ida e volta'
     }
   },
@@ -294,7 +294,7 @@ const promocoes = [
       localEspecifico: 'Peru',
       localGenerico: 'AMÉRICA DO SUL',
       artigo: 'a',
-      preco: 1500,
+      preco: 2500,
       trecho: 'ida e volta'
     }
   },
@@ -304,7 +304,7 @@ const promocoes = [
       localEspecifico: 'URUGUAI',
       localGenerico: 'AMÉRICA DO SUL',
       artigo: 'a',
-      preco: 1000,
+      preco: 2500,
       trecho: 'ida e volta'
     }
   },
@@ -314,7 +314,7 @@ const promocoes = [
       localEspecifico: 'Chile',
       localGenerico: 'AMÉRICA DO SUL',
       artigo: 'a',
-      preco: 1000,
+      preco: 2500,
       trecho: 'ida e volta'
     }
   },
@@ -324,7 +324,7 @@ const promocoes = [
       localEspecifico: 'ARGENTINA',
       localGenerico: 'AMÉRICA DO SUL',
       artigo: 'a',
-      preco: 1000,
+      preco: 2500,
       trecho: 'ida e volta'
     }
   },
@@ -334,7 +334,7 @@ const promocoes = [
       localEspecifico: 'Canadá',
       localGenerico: 'AMÉRICA DO NORTE',
       artigo: 'a',
-      preco: 2700,
+      preco: 4000,
       trecho: 'ida e volta'
     }
   },
@@ -344,7 +344,7 @@ const promocoes = [
       localEspecifico: 'México',
       localGenerico: 'AMÉRICA DO NORTE',
       artigo: 'a',
-      preco: 2500,
+      preco: 3500,
       trecho: 'ida e volta'
     }
   },
@@ -354,7 +354,7 @@ const promocoes = [
       localEspecifico: 'Caribe',
       localGenerico: 'AMÉRICA CENTRAL',
       artigo: 'a',
-      preco: 2500,
+      preco: 3500,
       trecho: 'ida e volta'
     }
   }
