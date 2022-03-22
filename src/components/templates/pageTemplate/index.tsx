@@ -22,6 +22,14 @@ const PageTemplate = ({
     <>
       <Head>
         <title>EiMilhas</title>
+        <meta name="author" content="NeXTIME"></meta>
+        <meta name="description" content="EiMilhas, encontre sua passagem ideal com o maior desconto!" />
+        <meta name="keywords" content="milhas, viagem, voar, passagem, avião, trip" />
+        <meta property="og:title" content="milhas, viagem, voar, passagem, avião, trip" />
+        <meta property="og:type" content="company" />
+        <meta property="og:image" content="https://www.eimilhas.com.br/assets/img/mala.jpg"/>
+        <meta property="og:url" content="https://www.eimilhas.com.br/"/>
+        <meta property="og:site_name" content="Ei Milhas"/>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/reactstrap/4.8.0/reactstrap.min.js"
