@@ -15,7 +15,7 @@ const FooterOwners = () => {
       w='100%'
       display={['block', 'flex']}
       alignItems='center'
-      h={[28, 14]}
+      h={[28, 28]}
     >
       <Box
         as='div'
@@ -25,7 +25,7 @@ const FooterOwners = () => {
       >
         Copyright © {new Date().getFullYear()} | EiMilhas | v.{version}
         <br />
-        CNPJ: 45.580.151/0001-02 e 43.784.997/0001-20
+        CNPJ: 45.580.151/0001-02 <br />CNPJ: 43.784.997/0001-20
       </Box>
 
       <Box

@@ -5,8 +5,8 @@ import Depoimento from '../../molecules/depoimento'
 import Promocao from '../../molecules/promocao'
 
 type Props = {
-    content: Record<string, any>
-    type: string
+  content: Record<string, unknown>
+  type: string
 }
 
 const Slider = ({
