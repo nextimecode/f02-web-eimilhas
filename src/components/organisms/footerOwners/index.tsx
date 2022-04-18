@@ -15,7 +15,7 @@ const FooterOwners = () => {
       w='100%'
       display={['block', 'flex']}
       alignItems='center'
-      h={[28, 14]}
+      minH={['200px', 32]}
     >
       <Box
         as='div'
@@ -23,7 +23,10 @@ const FooterOwners = () => {
         textAlign='center'
         py={[3, 4]}
       >
-          Copyright © {new Date().getFullYear()} | EiMilhas | v.{version}
+        Copyright © {new Date().getFullYear()} | EiMilhas | v.{version}
+        <br />
+        CNPJ: 45.580.151/0001-02 <br />CNPJ: 43.784.997/0001-20<br />
+        Endereço: Rua Dr. João Miranda, 100 <br />Dona Clara - Belo Horizonte - MG, 31260-380
       </Box>
 
       <Box
