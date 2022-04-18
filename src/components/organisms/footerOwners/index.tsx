@@ -23,7 +23,9 @@ const FooterOwners = () => {
         textAlign='center'
         py={[3, 4]}
       >
-          Copyright © {new Date().getFullYear()} | EiMilhas | v.{version}
+        Copyright © {new Date().getFullYear()} | EiMilhas | v.{version}
+        <br />
+        CNPJ: 45.580.151/0001-02 e 43.784.997/0001-20
       </Box>
 
       <Box
