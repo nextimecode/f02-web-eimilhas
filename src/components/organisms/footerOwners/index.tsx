@@ -15,7 +15,7 @@ const FooterOwners = () => {
       w='100%'
       display={['block', 'flex']}
       alignItems='center'
-      h={[32, 32]}
+      minH={['200px', 32]}
     >
       <Box
         as='div'
