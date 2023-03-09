@@ -64,7 +64,7 @@ const PageTemplate = ({
           bottom="20px"
           right="20px"
         >
-          <Link href={'https://api.whatsapp.com/send?phone=5531996650233&text=Ol%C3%A1,%20Eimilhas!'}>
+          <Link href={'https://api.whatsapp.com/send?phone=5531988715354&text=Ol%C3%A1,%20Eimilhas!'}>
             <a target="_blank" rel="noreferrer">
               <NextWhatsIcon />
             </a>

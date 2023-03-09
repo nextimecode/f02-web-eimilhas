@@ -8,9 +8,9 @@ import Promocoes from '../components/organisms/promocoes'
 import PageTemplate from '../components/templates/pageTemplate'
 import Section from '../components/templates/section'
 
-export const whatsappUrl = 'https://api.whatsapp.com/send?phone=5531996650233'
+export const whatsappUrl = 'https://api.whatsapp.com/send?phone=5531988715354'
 export const instagramUrl = 'https://www.instagram.com/eimilhas/'
-export const emailUrl = 'mailto:eimilhasvoos@gmail.com'
+export const emailUrl = 'mailto:eimilhaspassagens@gmail.com'
 export const facebookUrl = 'https://www.facebook.com/eimilhas/'
 
 const listNavLinks = [
