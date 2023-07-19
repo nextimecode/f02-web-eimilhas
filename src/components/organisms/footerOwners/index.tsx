@@ -26,7 +26,7 @@ const FooterOwners = () => {
         Copyright © {new Date().getFullYear()} | EiMilhas | v.{version}
         <br />
         CNPJ: 50.742.248/0001-04<br />
-        Endereço: Rua Dr. João Miranda, 100 <br />Dona Clara - Belo Horizonte - MG, 31260-380
+        Endereço: RUA BENTO MENDES CASTANHEIRA, 240 <br />Dona Clara - Belo Horizonte - MG, 31260-270
       </Box>
 
       <Box
