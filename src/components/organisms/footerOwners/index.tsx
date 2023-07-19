@@ -25,7 +25,7 @@ const FooterOwners = () => {
       >
         Copyright © {new Date().getFullYear()} | EiMilhas | v.{version}
         <br />
-        CNPJ: 45.580.151/0001-02 <br />CNPJ: 43.784.997/0001-20<br />
+        CNPJ: 50.742.248/0001-04<br />
         Endereço: Rua Dr. João Miranda, 100 <br />Dona Clara - Belo Horizonte - MG, 31260-380
       </Box>
 
