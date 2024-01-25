@@ -12,7 +12,7 @@ const Promocoes = ({ promocoes }: Props) => {
     <div className="row p-4 mx-0 text-center">
 
       <Title
-        label="Promoções"
+        label="Ei milhas"
         color="black"
       />
       <Subtitle
