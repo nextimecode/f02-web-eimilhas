@@ -23,10 +23,15 @@ const FooterOwners = () => {
         textAlign='center'
         py={[3, 4]}
       >
+        contato@eimilhas.com.br
+        <br />
+        eimilhaspassagens@gmail.com
+        <br />
+        <br />
         Copyright © {new Date().getFullYear()} | EiMilhas | v.{version}
         <br />
         CNPJ: 50.742.248/0001-04<br />
-        Endereço: RUA BENTO MENDES CASTANHEIRA, 240 <br />Dona Clara - Belo Horizonte - MG, 31260-270
+        Endereço: RUA BENTO MENDES CASTANHEIRA, 156 <br />Dona Clara - Belo Horizonte - MG, 31260-270
       </Box>
 
       <Box
