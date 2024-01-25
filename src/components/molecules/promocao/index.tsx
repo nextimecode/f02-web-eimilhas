@@ -46,7 +46,7 @@ const Promocao = ({
               <p className="fw-5 text-black my-0 text-uppercase" style={{ textDecoration: 'overline' }}>{promocao.localGenerico}</p>
             }
             <span className="text-uppercase"><Title label={promocao.localEspecifico} color="primary"/></span>
-            <p className="fw-5 text-black my-0">A partir de </p>
+            {/* <p className="fw-5 text-black my-0">A partir de </p> */}
             <Preco value={promocao.preco} color="black"/>
             <p className="fw-5 text-black my-0">{promocao.trecho}</p>
           </div>
