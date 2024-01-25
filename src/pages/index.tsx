@@ -781,14 +781,14 @@ const Index: React.FC = () => {
         <Depoimentos depoimentos={depoimentos}/>
       </Section>
 
-      <Section
+      {/* <Section
         id="numeros"
         bgUrl='assets/img/customers.jpg'
         bgColor='rgba(255,255,255,0.7)'
         classes="min-vh-50 bg-image bg-position-top my-5"
       >
         <Numeros/>
-      </Section>
+      </Section> */}
 
       <Section
         id="faq"
