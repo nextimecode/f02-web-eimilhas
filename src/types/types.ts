@@ -31,7 +31,7 @@ export interface PromocaoProps {
     localEspecifico: string
     localGenerico?: string
     artigo: string
-    preco: number
+    preco: string
     trecho?: string
 }
 

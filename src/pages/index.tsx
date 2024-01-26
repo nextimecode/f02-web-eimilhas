@@ -3,7 +3,7 @@ import BemVindo from '../components/organisms/bemvindo'
 import Depoimentos from '../components/organisms/depoimentos'
 import Encontre from '../components/organisms/encontre'
 import Faq from '../components/organisms/faq'
-import Numeros from '../components/organisms/numeros'
+// import Numeros from '../components/organisms/numeros'
 import Promocoes from '../components/organisms/promocoes'
 import PageTemplate from '../components/templates/pageTemplate'
 import Section from '../components/templates/section'
@@ -94,8 +94,8 @@ const promocoes = [
       localEspecifico: 'Espanha',
       localGenerico: 'Europa',
       artigo: 'a',
-      preco: 3500,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -104,8 +104,8 @@ const promocoes = [
       localEspecifico: 'Portugal',
       localGenerico: 'Europa',
       artigo: 'a',
-      preco: 3500,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -114,8 +114,8 @@ const promocoes = [
       localEspecifico: 'Bélgica',
       localGenerico: 'Europa',
       artigo: 'a',
-      preco: 3800,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -124,8 +124,8 @@ const promocoes = [
       localEspecifico: 'Holanda',
       localGenerico: 'Europa',
       artigo: 'a',
-      preco: 3700,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -134,8 +134,8 @@ const promocoes = [
       localEspecifico: 'França',
       localGenerico: 'Europa',
       artigo: 'a',
-      preco: 3700,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -144,8 +144,8 @@ const promocoes = [
       localEspecifico: 'Inglaterra',
       localGenerico: 'Europa',
       artigo: 'a',
-      preco: 4000,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -154,8 +154,8 @@ const promocoes = [
       localEspecifico: 'Turquia',
       localGenerico: 'Europa',
       artigo: 'a',
-      preco: 5000,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -164,8 +164,8 @@ const promocoes = [
       localEspecifico: 'Grécia',
       localGenerico: 'Europa',
       artigo: 'a',
-      preco: 5000,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -174,8 +174,8 @@ const promocoes = [
       localEspecifico: 'Alemanha',
       localGenerico: 'Europa',
       artigo: 'a',
-      preco: 3700,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -184,8 +184,8 @@ const promocoes = [
       localEspecifico: 'Itália',
       localGenerico: 'Europa',
       artigo: 'a',
-      preco: 3700,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -194,8 +194,8 @@ const promocoes = [
       localEspecifico: 'Estados Unidos',
       localGenerico: 'AMERICA DO NORTE',
       artigo: 'a',
-      preco: 3500,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -204,8 +204,8 @@ const promocoes = [
       localEspecifico: 'Japão',
       localGenerico: 'Ásia',
       artigo: 'a',
-      preco: 6000,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -214,8 +214,8 @@ const promocoes = [
       localEspecifico: 'Malásia',
       localGenerico: 'Ásia',
       artigo: 'a',
-      preco: 7000,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -224,8 +224,8 @@ const promocoes = [
       localEspecifico: 'Tailândia',
       localGenerico: 'Ásia',
       artigo: 'a',
-      preco: 7000,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -234,8 +234,8 @@ const promocoes = [
       localEspecifico: 'Indonésia',
       localGenerico: 'Ásia',
       artigo: 'a',
-      preco: 7000,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -244,8 +244,8 @@ const promocoes = [
       localEspecifico: 'Catar',
       localGenerico: 'Ásia',
       artigo: 'a',
-      preco: 5000,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -254,8 +254,8 @@ const promocoes = [
       localEspecifico: 'África do Sul',
       localGenerico: 'África',
       artigo: 'a',
-      preco: 3500,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -264,8 +264,8 @@ const promocoes = [
       localEspecifico: 'Marrocos',
       localGenerico: 'África',
       artigo: 'a',
-      preco: 3500,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -274,8 +274,8 @@ const promocoes = [
       localEspecifico: 'Egito',
       localGenerico: 'África',
       artigo: 'a',
-      preco: 4500,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -284,8 +284,8 @@ const promocoes = [
       localEspecifico: 'Colômbia',
       localGenerico: 'AMÉRICA DO SUL',
       artigo: 'a',
-      preco: 2500,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -294,8 +294,8 @@ const promocoes = [
       localEspecifico: 'Peru',
       localGenerico: 'AMÉRICA DO SUL',
       artigo: 'a',
-      preco: 2500,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -304,8 +304,8 @@ const promocoes = [
       localEspecifico: 'URUGUAI',
       localGenerico: 'AMÉRICA DO SUL',
       artigo: 'a',
-      preco: 2500,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -314,8 +314,8 @@ const promocoes = [
       localEspecifico: 'Chile',
       localGenerico: 'AMÉRICA DO SUL',
       artigo: 'a',
-      preco: 2500,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -324,8 +324,8 @@ const promocoes = [
       localEspecifico: 'ARGENTINA',
       localGenerico: 'AMÉRICA DO SUL',
       artigo: 'a',
-      preco: 2500,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -334,8 +334,8 @@ const promocoes = [
       localEspecifico: 'Canadá',
       localGenerico: 'AMÉRICA DO NORTE',
       artigo: 'a',
-      preco: 4000,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -344,8 +344,8 @@ const promocoes = [
       localEspecifico: 'México',
       localGenerico: 'AMÉRICA DO NORTE',
       artigo: 'a',
-      preco: 3500,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   },
   {
@@ -354,8 +354,8 @@ const promocoes = [
       localEspecifico: 'Caribe',
       localGenerico: 'AMÉRICA CENTRAL',
       artigo: 'a',
-      preco: 3500,
-      trecho: 'ida e volta'
+      preco: 'a consultar',
+      trecho: ''
     }
   }
 ]
@@ -781,14 +781,14 @@ const Index: React.FC = () => {
         <Depoimentos depoimentos={depoimentos}/>
       </Section>
 
-      <Section
+      {/* <Section
         id="numeros"
         bgUrl='assets/img/customers.jpg'
         bgColor='rgba(255,255,255,0.7)'
         classes="min-vh-50 bg-image bg-position-top my-5"
       >
         <Numeros/>
-      </Section>
+      </Section> */}
 
       <Section
         id="faq"

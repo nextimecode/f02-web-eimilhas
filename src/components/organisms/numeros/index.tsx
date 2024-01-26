@@ -11,7 +11,7 @@ const size = '100px'
 const cards = [
   {
     card: {
-      title: '400+',
+      title: '5000+',
       subtitle: 'passagens vendidas',
       image: <CustomerSvg size={size}/>
     }
@@ -24,7 +24,7 @@ const cards = [
   },
   {
     card: {
-      title: '50+',
+      title: '80+',
       subtitle: 'países atendidos',
       image: <GlobeSvg size={size}/>
     }
